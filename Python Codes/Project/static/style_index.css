@@ -1,0 +1,77 @@
+body {
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.landing{
+    height: 100vh;
+    width: 100%;
+    background-image: url('Web-Scraping-blog-image.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:center;
+}
+
+.card-review {
+    max-width: 520px;
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card-review:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transform: translate(15px, -15px);
+}
+
+.card-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.review-section {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.rating-badge {
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    border-radius: 4px;
+}
+
+.review-comment {
+    color: #6c757d;
+    font-weight: 300;
+}
+
+.rating-section {
+    background-color: #f1f3f5;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.review-date {
+    color: #868e96;
+    font-size: 0.8rem;
+    text-align: right;
+    margin-top: 1rem;
+}
