@@ -1,0 +1,6 @@
+model,runtime,threads,test_acc_pct,file_size_mb,latency_bs1_mean_ms,latency_bs1_p95_ms,throughput_bs128_img_s
+fp32,onnxruntime-cpu,4,37.91,44.69,3.037,3.252,422.5
+ptq_int8,onnxruntime-cpu,4,34.82,11.29,1.41,1.775,835.5
+qat_int8,onnxruntime-cpu,4,39.65,44.85,7.186,7.609,230.0
+unstructured_pruned,onnxruntime-cpu,4,46.44,44.69,2.87,3.026,406.0
+structured_pruned,onnxruntime-cpu,4,41.06,22.71,1.398,1.427,844.1
