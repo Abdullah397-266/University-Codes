@@ -1,0 +1,10 @@
+# Install PyTorch first, matching your CUDA version: https://pytorch.org/get-started/locally/
+torch>=2.3
+torchvision>=0.18
+numpy
+matplotlib
+pillow
+onnx
+onnxscript
+onnxruntime
+reportlab

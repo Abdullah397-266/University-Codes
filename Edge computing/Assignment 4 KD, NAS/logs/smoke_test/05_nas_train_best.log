@@ -1,0 +1,11 @@
+PS Assignment 4 KD, NAS> python src/nas_train_best.py --epochs 1 --train-subset 1024 --test-subset 512 --synthetic
+
+==============================================================================
+ Training best NAS architecture from scratch | device=cpu | epochs=1 | SYNTHETIC DATA (smoke test)
+==============================================================================
+res28 stem24 [mbconvx6 k3 c16 d2 hswish | dwsep k5 c64 d1 silu | conv k3 c96 d1 leaky_relu] head384 drop0.1
+[nas_best] epoch   1/1 | loss 2.3200 | train  10.16% | eval  11.13% * | 7.3s 
+
+Best test accuracy 11.13% (epoch 1) | 111 K params | 0.454 MB | 2.17 ms (1 thread) -> models/nas_best.pth
+
+[step finished in 0.2 min, exit code 0]

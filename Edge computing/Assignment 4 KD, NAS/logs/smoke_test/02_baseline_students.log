@@ -1,0 +1,24 @@
+PS Assignment 4 KD, NAS> python src/train_baseline.py --arch all --epochs 1 --train-subset 1024 --test-subset 512 --synthetic
+
+==============================================================================
+ Baseline student (no KD): mobilenetv2 | device=cpu | epochs=1 | SYNTHETIC DATA (smoke test)
+==============================================================================
+parameters: 2.35 M
+[mobilenetv2/baseline] epoch   1/1 | loss 4.6228 | train   1.27% | eval   1.76% * | 26.1s 
+-> best 1.76% saved to models/mobilenetv2_baseline.pth
+
+==============================================================================
+ Baseline student (no KD): squeezenet | device=cpu | epochs=1 | SYNTHETIC DATA (smoke test)
+==============================================================================
+parameters: 0.78 M
+[squeezenet/baseline] epoch   1/1 | loss 4.8001 | train   0.88% | eval   0.98% * | 13.9s 
+-> best 0.98% saved to models/squeezenet_baseline.pth
+
+==============================================================================
+ Baseline student (no KD): efficientnet_lite0 | device=cpu | epochs=1 | SYNTHETIC DATA (smoke test)
+==============================================================================
+parameters: 3.50 M
+[efficientnet_lite0/baseline] epoch   1/1 | loss 4.6331 | train   0.88% | eval   0.59% * | 29.0s 
+-> best 0.59% saved to models/efficientnet_lite0_baseline.pth
+
+[step finished in 1.3 min, exit code 0]

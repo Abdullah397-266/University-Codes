@@ -1,0 +1,15 @@
+PS Assignment 4 KD, NAS> python src/inference.py --model all --test-index 7 --synthetic
+
+==============================================================================
+ PyTorch CPU inference | models: teacher, mobilenetv2_baseline, mobilenetv2_kd, squeezenet_baseline, squeezenet_kd, efficientnet_lite0_baseline, efficientnet_lite0_kd, nas_best
+==============================================================================
+teacher                      (cifar100, 32px)  52.12 ms | top-3: chimpanzee 1.7%, seal 1.6%, dinosaur 1.5% | true: pickup_truck  [wrong]
+mobilenetv2_baseline         (cifar100, 32px)  17.84 ms | top-3: aquarium_fish 1.3%, tractor 1.2%, motorcycle 1.2% | true: pickup_truck  [wrong]
+mobilenetv2_kd               (cifar100, 32px)  11.14 ms | top-3: aquarium_fish 1.3%, seal 1.3%, kangaroo 1.3% | true: pickup_truck  [wrong]
+squeezenet_baseline          (cifar100, 32px)  10.22 ms | top-3: telephone 1.2%, castle 1.1%, maple_tree 1.1% | true: pickup_truck  [wrong]
+squeezenet_kd                (cifar100, 32px)   6.20 ms | top-3: telephone 1.1%, castle 1.1%, plain 1.1% | true: pickup_truck  [wrong]
+efficientnet_lite0_baseline  (cifar100, 32px)  19.11 ms | top-3: porcupine 1.3%, rose 1.3%, turtle 1.3% | true: pickup_truck  [wrong]
+efficientnet_lite0_kd        (cifar100, 32px)  10.84 ms | top-3: seal 1.4%, turtle 1.4%, bridge 1.4% | true: pickup_truck  [wrong]
+nas_best                     (cifar10, 28px)   4.89 ms | top-3: dog 10.8%, airplane 10.6%, truck 10.6% | true: ship  [wrong]
+
+[step finished in 0.1 min, exit code 0]

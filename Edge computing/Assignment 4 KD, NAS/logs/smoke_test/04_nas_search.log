@@ -1,0 +1,50 @@
+PS Assignment 4 KD, NAS> python src/nas_search.py --population 3 --generations 2 --children 2 --epochs-per-candidate 1 --train-subset 1024 --val-split 512 --synthetic
+
+==============================================================================
+ Hardware-aware evolutionary NAS on CIFAR-10 | device=cpu | constraints: {'max_latency_ms': 3.0, 'max_size_mb': 1.5, 'max_peak_mem_mb': 2.5, 'threads': 1} | SYNTHETIC DATA (smoke test)
+==============================================================================
+
+==============================================================================
+ Generation 0: random initial population of 3
+==============================================================================
+[cand   0 g0 random   ] REJECTED (size 2.03 > 1.5 MB; peak memory 3.2 > 2.5 MB) | res24 stem32 [conv k3 c16 d2 relu | conv k7 c64 d3 silu | conv k3 c64 d1 leaky_relu] head384 drop0.0
+[cand   1 g0 random   ] REJECTED (latency 3.33 > 3.0 ms) | res32 stem32 [conv k5 c32 d3 leaky_relu | mbconvx4 k3 c32 d2 hswish | dwsep k3 c64 d2 relu] head256 drop0.0
+[cand   2 g0 random   ] REJECTED (latency 3.22 > 3.0 ms; size 5.22 > 1.5 MB; peak memory 5.6 > 2.5 MB) | res28 stem32 [dwsep k7 c16 d2 relu | dwsep k7 c32 d2 leaky_relu | mbconvx2 k3 c128 d2 relu | conv k5 c128 d3 relu] head256 drop0.1
+[cand   3 g0 random   ] REJECTED (latency 6.96 > 3.0 ms; size 4.44 > 1.5 MB; peak memory 5.4 > 2.5 MB) | res32 stem24 [conv k5 c24 d1 hswish | conv k7 c64 d3 relu6 | conv k3 c128 d3 silu | mbconvx2 k7 c192 d2 hswish] head128 drop0.0
+[cand   4 g0 random   ] measured: 1.95 ms, 0.45 MB, 111 K params -> training | res28 stem24 [mbconvx6 k3 c16 d2 hswish | dwsep k5 c64 d1 silu | conv k3 c96 d1 leaky_relu] head384 drop0.1
+[cand   4 g0 random   ] val acc 11.52% | fitness 11.312 | 7s
+[cand   5 g0 random   ] REJECTED (latency 6.79 > 3.0 ms; size 11.89 > 1.5 MB; peak memory 13.2 > 2.5 MB) | res32 stem24 [mbconvx4 k3 c16 d2 relu | mbconvx2 k3 c32 d1 silu | dwsep k5 c64 d3 silu | conv k7 c160 d3 relu] head384 drop0.2
+[cand   6 g0 random   ] REJECTED (latency 3.23 > 3.0 ms; size 2.24 > 1.5 MB; peak memory 3.1 > 2.5 MB) | res32 stem24 [conv k5 c24 d1 relu | mbconvx2 k5 c64 d3 leaky_relu | mbconvx6 k5 c128 d1 leaky_relu | conv k5 c128 d1 leaky_relu] head128 drop0.2
+[cand   7 g0 random   ] measured: 2.64 ms, 1.07 MB, 260 K params -> training | res28 stem16 [conv k5 c24 d1 relu6 | mbconvx4 k3 c32 d3 relu | mbconvx4 k3 c64 d3 leaky_relu | mbconvx4 k7 c160 d1 relu6] head384 drop0.2
+[cand   7 g0 random   ] val acc 11.52% | fitness 11.075 | 6s
+[cand   8 g0 random   ] measured: 1.54 ms, 0.95 MB, 243 K params -> training | res32 stem24 [dwsep k7 c32 d2 leaky_relu | conv k3 c32 d2 hswish | conv k7 c128 d1 relu6] head128 drop0.0
+[cand   8 g0 random   ] val acc 11.13% | fitness 11.110 | 8s
+
+==============================================================================
+ Generation 1/2
+==============================================================================
+[cand   9 g1 offspring] measured: 2.21 ms, 0.82 MB, 207 K params -> training | res28 stem24 [mbconvx6 k3 c16 d2 hswish | conv k5 c64 d2 relu6 | conv k3 c64 d1 leaky_relu] head384 drop0.1
+[cand   9 g1 offspring] val acc 9.77% | fitness 9.505 | 9s
+[cand  10 g1 offspring] measured: 1.55 ms, 0.51 MB, 127 K params -> training | res28 stem16 [mbconvx6 k3 c16 d2 hswish | conv k5 c64 d1 silu | conv k3 c128 d1 leaky_relu] head128 drop0.0
+[cand  10 g1 offspring] val acc 11.13% | fitness 11.106 | 5s
+--> generation 1 best: id 4 | val 11.52% | 1.95 ms | 0.45 MB | fitness 11.312 | elapsed 0.6 min
+
+==============================================================================
+ Generation 2/2
+==============================================================================
+[cand  11 g2 offspring] REJECTED (peak memory 2.7 > 2.5 MB) | res28 stem24 [mbconvx6 k3 c32 d2 hswish | dwsep k5 c64 d1 leaky_relu | conv k3 c96 d2 leaky_relu] head384 drop0.1
+[cand  12 g2 offspring] measured: 1.01 ms, 0.29 MB, 71 K params -> training | res28 stem24 [dwsep k3 c24 d2 hswish | dwsep k5 c64 d1 silu | conv k3 c64 d1 hswish] head384 drop0.1
+[cand  12 g2 offspring] val acc 9.77% | fitness 10.039 | 3s
+[cand  13 g2 offspring] measured: 1.72 ms, 0.68 MB, 171 K params -> training | res28 stem24 [mbconvx6 k3 c16 d2 relu | dwsep k5 c48 d1 relu6 | conv k5 c96 d1 leaky_relu] head384 drop0.1
+[cand  13 g2 offspring] val acc 9.77% | fitness 9.671 | 7s
+--> generation 2 best: id 4 | val 11.52% | 1.95 ms | 0.45 MB | fitness 11.312 | elapsed 0.8 min
+
+==============================================================================
+ Search finished
+==============================================================================
+candidates evaluated: 14 (accepted 7, rejected by constraints 7)
+best: id 4 | val acc 11.52% | 1.95 ms | 0.455 MB | peak mem 1.889 MB
+      res28 stem24 [mbconvx6 k3 c16 d2 hswish | dwsep k5 c64 d1 silu | conv k3 c96 d1 leaky_relu] head384 drop0.1
+saved models/nas_best_config.json and results/nas_best_architecture.json, history in results/nas_history.csv/.json
+
+[step finished in 0.9 min, exit code 0]

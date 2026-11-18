@@ -1,0 +1,14 @@
+PS Assignment 4 KD, NAS> python src/onnx_inference.py --model all --test-index 7 --synthetic
+
+==============================================================================
+ ONNX Runtime 1.32.0 | CPUExecutionProvider | 1 thread(s)
+==============================================================================
+mobilenetv2_baseline           5.53 ms | top-3: aquarium_fish 1.3%, tractor 1.2%, motorcycle 1.2% | true: pickup_truck [wrong]
+mobilenetv2_kd                 3.64 ms | top-3: aquarium_fish 1.3%, seal 1.3%, kangaroo 1.3% | true: pickup_truck [wrong]
+squeezenet_baseline            2.51 ms | top-3: telephone 1.2%, castle 1.1%, maple_tree 1.1% | true: pickup_truck [wrong]
+squeezenet_kd                  2.44 ms | top-3: telephone 1.1%, castle 1.1%, plain 1.1% | true: pickup_truck [wrong]
+efficientnet_lite0_baseline    4.48 ms | top-3: porcupine 1.3%, rose 1.3%, turtle 1.3% | true: pickup_truck [wrong]
+efficientnet_lite0_kd          4.45 ms | top-3: seal 1.4%, turtle 1.4%, bridge 1.4% | true: pickup_truck [wrong]
+nas_best                       1.11 ms | top-3: dog 10.8%, airplane 10.6%, truck 10.6% | true: ship [wrong]
+
+[step finished in 0.1 min, exit code 0]

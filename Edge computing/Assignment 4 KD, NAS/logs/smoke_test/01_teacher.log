@@ -1,0 +1,12 @@
+PS Assignment 4 KD, NAS> python src/train_teacher.py --epochs 1 --train-subset 1024 --test-subset 512 --synthetic
+
+==============================================================================
+ Teacher: ResNet-50 on CIFAR-100 | device=cpu | epochs=1 | SYNTHETIC DATA (smoke test)
+==============================================================================
+train images: 1024 | test images: 512
+parameters: 23.71 M
+[teacher] epoch   1/1 | loss 4.8072 | train   0.39% | eval   0.78% * | 92.8s 
+
+Best teacher test accuracy: 0.78% (epoch 1) -> models/resnet50_teacher.pth
+
+[step finished in 1.6 min, exit code 0]

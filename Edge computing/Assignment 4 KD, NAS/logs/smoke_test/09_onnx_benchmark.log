@@ -1,0 +1,16 @@
+PS Assignment 4 KD, NAS> python src/onnx_inference.py --benchmark --threads 1 --runs 50 --eval-images 512 --synthetic
+
+==============================================================================
+ ONNX Runtime 1.32.0 | CPUExecutionProvider | 1 thread(s)
+==============================================================================
+mobilenetv2_baseline         acc   1.95% | median 2.216 ms | p95 3.404 ms | 412 img/s | 8.95 MB
+mobilenetv2_kd               acc   1.95% | median 2.394 ms | p95 2.897 ms | 399 img/s | 8.95 MB
+squeezenet_baseline          acc   0.39% | median 1.827 ms | p95 2.120 ms | 533 img/s | 2.96 MB
+squeezenet_kd                acc   0.39% | median 1.724 ms | p95 1.840 ms | 578 img/s | 2.96 MB
+efficientnet_lite0_baseline  acc   0.59% | median 2.811 ms | p95 3.015 ms | 352 img/s | 13.31 MB
+efficientnet_lite0_kd        acc   0.59% | median 2.968 ms | p95 3.131 ms | 336 img/s | 13.31 MB
+nas_best                     acc   8.98% | median 0.456 ms | p95 0.501 ms | 2204 img/s | 0.43 MB
+
+saved results/onnx_benchmark.csv
+
+[step finished in 0.3 min, exit code 0]

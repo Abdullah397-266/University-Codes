@@ -1,0 +1,25 @@
+PS Assignment 4 KD, NAS> python src/train_kd.py --arch all --epochs 1 --train-subset 1024 --test-subset 512 --synthetic
+Loaded teacher resnet50_teacher.pth: test accuracy 0.78%
+
+==============================================================================
+ KD student: mobilenetv2 <- ResNet-50 | alpha=0.7 T=4.0 beta=1.0 | epochs=1 | SYNTHETIC DATA (smoke test)
+==============================================================================
+student parameters: 2.35 M | feature adapter: 2.63 M (training only)
+[mobilenetv2/kd] epoch   1/1 | loss 2.6119 | train   0.88% | eval   1.76% * | 41.1s hard=4.618 soft=0.027 feat=1.207
+-> best 1.76% saved to models/mobilenetv2_kd.pth
+
+==============================================================================
+ KD student: squeezenet <- ResNet-50 | alpha=0.7 T=4.0 beta=1.0 | epochs=1 | SYNTHETIC DATA (smoke test)
+==============================================================================
+student parameters: 0.78 M | feature adapter: 1.05 M (training only)
+[squeezenet/kd] epoch   1/1 | loss 2.7352 | train   0.78% | eval   0.98% * | 31.1s hard=4.731 soft=0.152 feat=1.210
+-> best 0.98% saved to models/squeezenet_kd.pth
+
+==============================================================================
+ KD student: efficientnet_lite0 <- ResNet-50 | alpha=0.7 T=4.0 beta=1.0 | epochs=1 | SYNTHETIC DATA (smoke test)
+==============================================================================
+student parameters: 3.50 M | feature adapter: 2.63 M (training only)
+[efficientnet_lite0/kd] epoch   1/1 | loss 2.6315 | train   0.78% | eval   1.56% * | 47.5s hard=4.637 soft=0.047 feat=1.207
+-> best 1.56% saved to models/efficientnet_lite0_kd.pth
+
+[step finished in 2.3 min, exit code 0]
