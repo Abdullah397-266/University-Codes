@@ -112,7 +112,3 @@ Model names: `teacher`, `mobilenetv2_baseline`, `mobilenetv2_kd`, `squeezenet_ba
 * `CUDA out of memory` -> `--batch-size 64`. Windows data-loader errors -> `--workers 0`.
 * `Could not find feasible architectures` -> relax `--max-latency-ms` / `--max-size-mb`.
 * Compare latencies only within one run on one machine.
-
-## 8. Submission checklist
-* Zip as `23i-0089_B.zip` and upload to Google Classroom only.
-* Remove `data/`, `.venv/` and `__pycache__/` before zipping; keep `models/`, `results/`, `logs/`, `report/`.
