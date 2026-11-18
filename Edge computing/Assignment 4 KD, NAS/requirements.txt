@@ -8,3 +8,4 @@ onnx
 onnxscript
 onnxruntime
 reportlab
+certifi

@@ -37,6 +37,14 @@ RESULTS_DIR = ROOT / "results"
 LOGS_DIR = ROOT / "logs"
 REPORT_DIR = ROOT / "report"
 os.environ.setdefault("KINETO_LOG_LEVEL", "5")
+
+# CIFAR is downloaded over HTTPS. Some Windows Python installs lack up-to-date root certificates and fail with
+# "SSL: CERTIFICATE_VERIFY_FAILED"; point Python at certifi's CA bundle instead (if certifi is installed).
+try:
+    import certifi
+    os.environ.setdefault("SSL_CERT_FILE", certifi.where())
+except ImportError:
+    pass
 for _d in (DATA_DIR, MODELS_DIR, ONNX_DIR, RESULTS_DIR, LOGS_DIR):
     _d.mkdir(parents=True, exist_ok=True)
 

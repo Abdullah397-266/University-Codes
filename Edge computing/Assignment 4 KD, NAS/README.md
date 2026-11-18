@@ -109,6 +109,10 @@ Model names: `teacher`, `mobilenetv2_baseline`, `mobilenetv2_kd`, `squeezenet_ba
   `--max-latency-ms`.
 
 ## 7. Troubleshooting
+* `SSL: CERTIFICATE_VERIFY_FAILED` while downloading CIFAR -> `pip install --upgrade certifi` (the code uses
+  certifi's certificates automatically). If it still fails, download
+  https://www.cs.toronto.edu/~kriz/cifar-100-python.tar.gz and https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz
+  in the browser and put both files (still compressed) in `data/`; the scripts verify and extract them.
 * `CUDA out of memory` -> `--batch-size 64`. Windows data-loader errors -> `--workers 0`.
 * `Could not find feasible architectures` -> relax `--max-latency-ms` / `--max-size-mb`.
 * Compare latencies only within one run on one machine.
