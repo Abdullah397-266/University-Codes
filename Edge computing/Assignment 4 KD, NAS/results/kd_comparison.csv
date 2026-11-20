@@ -1,0 +1,4 @@
+student,baseline_acc,kd_acc,kd_gain_pts,params_M,size_mb,teacher_acc,compression_x,cpu_speedup_x
+mobilenetv2,61.6,67.4,5.8,2.352,9.203,72.53,10.1,5.2
+squeezenet,58.77,64.44,5.67,0.7767,3.033,72.53,30.5,6.1
+efficientnet_lite0,62.31,67.16,4.85,3.4991,13.603,72.53,6.8,4.8

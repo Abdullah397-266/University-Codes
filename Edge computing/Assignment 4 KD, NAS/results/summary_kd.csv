@@ -1,0 +1,4 @@
+arch,mode,best_test_acc,best_epoch,epochs,alpha,temperature,beta,teacher_acc
+mobilenetv2,kd,67.4,9,10,0.7,4.0,1.0,72.53
+squeezenet,kd,64.44,10,10,0.7,4.0,1.0,72.53
+efficientnet_lite0,kd,67.16,10,10,0.7,4.0,1.0,72.53

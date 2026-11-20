@@ -1,0 +1,28 @@
+PS edge assignment 4> python src/benchmark.py
+
+==============================================================================
+ Benchmark | accuracy on cuda | latency on CPU (6 threads available)
+==============================================================================
+Files already downloaded and verified
+Files already downloaded and verified
+teacher                      acc  72.53% |  23.705 M params |   1298.0 MMACs |   90.73 MB | 1t   78.23 ms | all-t  34.60 ms | peak 95.45 MB
+mobilenetv2_baseline         acc  61.60% |   2.352 M params |     88.1 MMACs |    9.20 MB | 1t   15.28 ms | all-t  13.09 ms | peak 11.01 MB
+mobilenetv2_kd               acc  67.40% |   2.352 M params |     88.1 MMACs |    9.20 MB | 1t   15.11 ms | all-t  13.79 ms | peak 11.01 MB
+squeezenet_baseline          acc  58.77% |   0.777 M params |     89.2 MMACs |    3.03 MB | 1t   12.72 ms | all-t   6.90 ms | peak 6.07 MB
+squeezenet_kd                acc  64.44% |   0.777 M params |     89.2 MMACs |    3.03 MB | 1t   12.73 ms | all-t   7.47 ms | peak 6.07 MB
+efficientnet_lite0_baseline  acc  62.31% |   3.499 M params |    115.7 MMACs |   13.60 MB | 1t   17.04 ms | all-t  14.31 ms | peak 15.41 MB
+efficientnet_lite0_kd        acc  67.16% |   3.499 M params |    115.7 MMACs |   13.60 MB | 1t   16.45 ms | all-t  13.06 ms | peak 15.41 MB
+Files already downloaded and verified
+Files already downloaded and verified
+nas_best                     acc  82.20% |   0.040 M params |      4.5 MMACs |    0.18 MB | 1t    2.74 ms | all-t   2.45 ms | peak 0.65 MB
+
+==============================================================================
+ Baseline vs knowledge distillation (CIFAR-100 test accuracy)
+==============================================================================
+mobilenetv2          baseline  61.60% | KD  67.40% | gain +5.80 pts | 10.1x fewer params, 5.2x faster than teacher
+squeezenet           baseline  58.77% | KD  64.44% | gain +5.67 pts | 30.5x fewer params, 6.1x faster than teacher
+efficientnet_lite0   baseline  62.31% | KD  67.16% | gain +4.85 pts | 6.8x fewer params, 4.8x faster than teacher
+
+saved results/benchmark_results.csv and results/kd_comparison.csv
+
+[step finished in 2.0 min, exit code 0]

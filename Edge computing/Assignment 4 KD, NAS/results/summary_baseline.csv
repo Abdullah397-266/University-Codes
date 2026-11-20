@@ -1,0 +1,4 @@
+arch,mode,best_test_acc,best_epoch,epochs
+mobilenetv2,baseline,61.6,10,10
+squeezenet,baseline,58.77,10,10
+efficientnet_lite0,baseline,62.31,10,10

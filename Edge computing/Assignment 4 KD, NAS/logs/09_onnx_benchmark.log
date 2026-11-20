@@ -1,0 +1,23 @@
+PS edge assignment 4> python src/onnx_inference.py --benchmark --threads 1
+
+==============================================================================
+ ONNX Runtime 1.31.0 | CPUExecutionProvider | 1 thread(s)
+==============================================================================
+Files already downloaded and verified
+mobilenetv2_baseline         acc  61.59% | median 4.248 ms | p95 4.578 ms | 239 img/s | 8.95 MB
+Files already downloaded and verified
+mobilenetv2_kd               acc  67.45% | median 4.200 ms | p95 4.449 ms | 238 img/s | 8.95 MB
+Files already downloaded and verified
+squeezenet_baseline          acc  58.80% | median 2.484 ms | p95 3.103 ms | 402 img/s | 2.96 MB
+Files already downloaded and verified
+squeezenet_kd                acc  64.41% | median 3.215 ms | p95 3.490 ms | 310 img/s | 2.96 MB
+Files already downloaded and verified
+efficientnet_lite0_baseline  acc  62.33% | median 5.712 ms | p95 6.336 ms | 174 img/s | 13.31 MB
+Files already downloaded and verified
+efficientnet_lite0_kd        acc  67.12% | median 5.706 ms | p95 6.022 ms | 175 img/s | 13.31 MB
+Files already downloaded and verified
+nas_best                     acc  82.22% | median 0.338 ms | p95 0.384 ms | 3015 img/s | 0.16 MB
+
+saved results/onnx_benchmark.csv
+
+[step finished in 4.7 min, exit code 0]

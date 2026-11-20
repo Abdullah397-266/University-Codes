@@ -1,0 +1,9 @@
+model,dataset,resolution,test_acc,params_M,MMACs,size_mb,latency_1t_ms,latency_1t_p95_ms,latency_allt_ms,peak_mem_mb
+teacher,cifar100,32,72.53,23.7053,1298.01,90.728,78.227,90.888,34.599,95.45
+mobilenetv2_baseline,cifar100,32,61.6,2.352,88.09,9.203,15.276,17.701,13.094,11.01
+mobilenetv2_kd,cifar100,32,67.4,2.352,88.09,9.203,15.107,16.099,13.787,11.01
+squeezenet_baseline,cifar100,32,58.77,0.7767,89.23,3.033,12.72,13.988,6.898,6.07
+squeezenet_kd,cifar100,32,64.44,0.7767,89.23,3.033,12.733,13.662,7.466,6.07
+efficientnet_lite0_baseline,cifar100,32,62.31,3.4991,115.66,13.603,17.038,19.176,14.307,15.41
+efficientnet_lite0_kd,cifar100,32,67.16,3.4991,115.66,13.603,16.45,19.379,13.057,15.41
+nas_best,cifar10,32,82.2,0.04,4.47,0.182,2.737,3.358,2.449,0.65

@@ -1,0 +1,8 @@
+model,dataset,resolution,onnx_size_mb,accuracy_10000_imgs,latency_median_ms,latency_p95_ms,throughput_img_s,threads
+mobilenetv2_baseline,cifar100,32,8.9461,61.59,4.2478,4.5779,239.2,1
+mobilenetv2_kd,cifar100,32,8.9461,67.45,4.2004,4.4488,238.4,1
+squeezenet_baseline,cifar100,32,2.965,58.8,2.4837,3.1026,401.7,1
+squeezenet_kd,cifar100,32,2.965,64.41,3.2153,3.4896,309.7,1
+efficientnet_lite0_baseline,cifar100,32,13.3064,62.33,5.7115,6.336,173.6,1
+efficientnet_lite0_kd,cifar100,32,13.3064,67.12,5.7056,6.0218,175.2,1
+nas_best,cifar10,32,0.1568,82.22,0.3381,0.3842,3015.1,1

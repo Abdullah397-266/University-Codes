@@ -1,0 +1,43 @@
+{
+  "test_acc": 82.2,
+  "best_epoch": 14,
+  "epochs": 15,
+  "params": 40010,
+  "macs": 4470272,
+  "size_mb": 0.18157196044921875,
+  "latency_ms": 1.3938499996584142,
+  "latency_p95_ms": 2.2589000000152737,
+  "peak_mem_mb": 0.6510086059570312,
+  "config": {
+    "resolution": 32,
+    "stem_channels": 16,
+    "stages": [
+      {
+        "depth": 1,
+        "channels": 32,
+        "kernel": 3,
+        "block": "dwsep",
+        "expand": 6,
+        "activation": "leaky_relu"
+      },
+      {
+        "depth": 2,
+        "channels": 48,
+        "kernel": 5,
+        "block": "dwsep",
+        "expand": 2,
+        "activation": "hswish"
+      },
+      {
+        "depth": 2,
+        "channels": 64,
+        "kernel": 7,
+        "block": "dwsep",
+        "expand": 2,
+        "activation": "relu"
+      }
+    ],
+    "head_channels": 256,
+    "dropout": 0.1
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": 63,
+  "val_acc": 45.8,
+  "fitness": 44.5368,
+  "latency_ms": 2.2368,
+  "size_mb": 0.1816,
+  "peak_mem_mb": 0.651,
+  "params": 40010,
+  "macs": 4470272,
+  "summary": "res32 stem16 [dwsep k3 c32 d1 leaky_relu | dwsep k5 c48 d2 hswish | dwsep k7 c64 d2 relu] head256 drop0.1",
+  "config": {
+    "resolution": 32,
+    "stem_channels": 16,
+    "stages": [
+      {
+        "depth": 1,
+        "channels": 32,
+        "kernel": 3,
+        "block": "dwsep",
+        "expand": 6,
+        "activation": "leaky_relu"
+      },
+      {
+        "depth": 2,
+        "channels": 48,
+        "kernel": 5,
+        "block": "dwsep",
+        "expand": 2,
+        "activation": "hswish"
+      },
+      {
+        "depth": 2,
+        "channels": 64,
+        "kernel": 7,
+        "block": "dwsep",
+        "expand": 2,
+        "activation": "relu"
+      }
+    ],
+    "head_channels": 256,
+    "dropout": 0.1
+  },
+  "constraints": {
+    "max_latency_ms": 3.0,
+    "max_size_mb": 1.5,
+    "max_peak_mem_mb": 2.5,
+    "threads": 1
+  },
+  "search_args": {
+    "population": 6,
+    "generations": 3,
+    "children": 4,
+    "tournament": 3,
+    "crossover_prob": 0.5,
+    "mutation_prob": 0.25,
+    "max_attempts": 30,
+    "epochs_per_candidate": 2,
+    "train_subset": 10000,
+    "val_split": 5000,
+    "batch_size": 128,
+    "lr": 0.05,
+    "workers": 4,
+    "device": "auto",
+    "seed": 42,
+    "synthetic": false,
+    "verbose": false,
+    "max_latency_ms": 3.0,
+    "max_size_mb": 1.5,
+    "max_peak_mem_mb": 2.5,
+    "latency_threads": 1,
+    "latency_target_ms": 1.5,
+    "reward_w": -0.07
+  },
+  "evaluated": 69,
+  "accepted": 18,
+  "rejected": 51,
+  "search_time_min": 5.59
+}

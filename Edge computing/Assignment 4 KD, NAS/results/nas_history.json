@@ -1,0 +1,3607 @@
+[
+  {
+    "id": 0,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 4.69 > 3.0 ms; size 2.03 > 1.5 MB; peak memory 3.2 > 2.5 MB",
+    "resolution": 24,
+    "params": 526058,
+    "macs": 71722752,
+    "size_mb": 2.0277,
+    "latency_ms": 4.6905,
+    "peak_mem_mb": 3.226,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res24 stem32 [conv k3 c16 d2 relu | conv k7 c64 d3 silu | conv k3 c64 d1 leaky_relu] head384 drop0.0",
+    "config": {
+      "resolution": 24,
+      "stem_channels": 32,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 16,
+          "kernel": 3,
+          "block": "conv",
+          "expand": 6,
+          "activation": "relu"
+        },
+        {
+          "depth": 3,
+          "channels": 64,
+          "kernel": 7,
+          "block": "conv",
+          "expand": 6,
+          "activation": "silu"
+        },
+        {
+          "depth": 1,
+          "channels": 64,
+          "kernel": 3,
+          "block": "conv",
+          "expand": 2,
+          "activation": "leaky_relu"
+        }
+      ],
+      "head_channels": 384,
+      "dropout": 0.0
+    }
+  },
+  {
+    "id": 1,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 7.06 > 3.0 ms",
+    "resolution": 32,
+    "params": 124682,
+    "macs": 88957440,
+    "size_mb": 0.5136,
+    "latency_ms": 7.0567,
+    "peak_mem_mb": 1.729,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res32 stem32 [conv k5 c32 d3 leaky_relu | mbconvx4 k3 c32 d2 hswish | dwsep k3 c64 d2 relu] head256 drop0.0",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 32,
+      "stages": [
+        {
+          "depth": 3,
+          "channels": 32,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 4,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 2,
+          "channels": 32,
+          "kernel": 3,
+          "block": "mbconv",
+          "expand": 4,
+          "activation": "hswish"
+        },
+        {
+          "depth": 2,
+          "channels": 64,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "relu"
+        }
+      ],
+      "head_channels": 256,
+      "dropout": 0.0
+    }
+  },
+  {
+    "id": 2,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 5.69 > 3.0 ms; size 5.22 > 1.5 MB; peak memory 5.6 > 2.5 MB",
+    "resolution": 28,
+    "params": 1354186,
+    "macs": 28228352,
+    "size_mb": 5.2158,
+    "latency_ms": 5.686,
+    "peak_mem_mb": 5.557,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res28 stem32 [dwsep k7 c16 d2 relu | dwsep k7 c32 d2 leaky_relu | mbconvx2 k3 c128 d2 relu | conv k5 c128 d3 relu] head256 drop0.1",
+    "config": {
+      "resolution": 28,
+      "stem_channels": 32,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 16,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "relu"
+        },
+        {
+          "depth": 2,
+          "channels": 32,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 2,
+          "channels": 128,
+          "kernel": 3,
+          "block": "mbconv",
+          "expand": 2,
+          "activation": "relu"
+        },
+        {
+          "depth": 3,
+          "channels": 128,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 2,
+          "activation": "relu"
+        }
+      ],
+      "head_channels": 256,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 3,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 10.77 > 3.0 ms; size 4.44 > 1.5 MB; peak memory 5.4 > 2.5 MB",
+    "resolution": 32,
+    "params": 1151794,
+    "macs": 167169280,
+    "size_mb": 4.4408,
+    "latency_ms": 10.7718,
+    "peak_mem_mb": 5.396,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res32 stem24 [conv k5 c24 d1 hswish | conv k7 c64 d3 relu6 | conv k3 c128 d3 silu | mbconvx2 k7 c192 d2 hswish] head128 drop0.0",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 24,
+      "stages": [
+        {
+          "depth": 1,
+          "channels": 24,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 6,
+          "activation": "hswish"
+        },
+        {
+          "depth": 3,
+          "channels": 64,
+          "kernel": 7,
+          "block": "conv",
+          "expand": 6,
+          "activation": "relu6"
+        },
+        {
+          "depth": 3,
+          "channels": 128,
+          "kernel": 3,
+          "block": "conv",
+          "expand": 4,
+          "activation": "silu"
+        },
+        {
+          "depth": 2,
+          "channels": 192,
+          "kernel": 7,
+          "block": "mbconv",
+          "expand": 2,
+          "activation": "hswish"
+        }
+      ],
+      "head_channels": 128,
+      "dropout": 0.0
+    }
+  },
+  {
+    "id": 4,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 3.22 > 3.0 ms",
+    "resolution": 28,
+    "params": 111266,
+    "macs": 13924544,
+    "size_mb": 0.454,
+    "latency_ms": 3.2164,
+    "peak_mem_mb": 1.889,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res28 stem24 [mbconvx6 k3 c16 d2 hswish | dwsep k5 c64 d1 silu | conv k3 c96 d1 leaky_relu] head384 drop0.1",
+    "config": {
+      "resolution": 28,
+      "stem_channels": 24,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 16,
+          "kernel": 3,
+          "block": "mbconv",
+          "expand": 6,
+          "activation": "hswish"
+        },
+        {
+          "depth": 1,
+          "channels": 64,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "silu"
+        },
+        {
+          "depth": 1,
+          "channels": 96,
+          "kernel": 3,
+          "block": "conv",
+          "expand": 6,
+          "activation": "leaky_relu"
+        }
+      ],
+      "head_channels": 384,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 5,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 10.08 > 3.0 ms; size 11.89 > 1.5 MB; peak memory 13.2 > 2.5 MB",
+    "resolution": 32,
+    "params": 3103266,
+    "macs": 59094784,
+    "size_mb": 11.8892,
+    "latency_ms": 10.0772,
+    "peak_mem_mb": 13.189,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res32 stem24 [mbconvx4 k3 c16 d2 relu | mbconvx2 k3 c32 d1 silu | dwsep k5 c64 d3 silu | conv k7 c160 d3 relu] head384 drop0.2",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 24,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 16,
+          "kernel": 3,
+          "block": "mbconv",
+          "expand": 4,
+          "activation": "relu"
+        },
+        {
+          "depth": 1,
+          "channels": 32,
+          "kernel": 3,
+          "block": "mbconv",
+          "expand": 2,
+          "activation": "silu"
+        },
+        {
+          "depth": 3,
+          "channels": 64,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "silu"
+        },
+        {
+          "depth": 3,
+          "channels": 160,
+          "kernel": 7,
+          "block": "conv",
+          "expand": 6,
+          "activation": "relu"
+        }
+      ],
+      "head_channels": 384,
+      "dropout": 0.2
+    }
+  },
+  {
+    "id": 6,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 5.55 > 3.0 ms; size 2.24 > 1.5 MB; peak memory 3.1 > 2.5 MB",
+    "resolution": 32,
+    "params": 574242,
+    "macs": 44578048,
+    "size_mb": 2.2363,
+    "latency_ms": 5.5472,
+    "peak_mem_mb": 3.145,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res32 stem24 [conv k5 c24 d1 relu | mbconvx2 k5 c64 d3 leaky_relu | mbconvx6 k5 c128 d1 leaky_relu | conv k5 c128 d1 leaky_relu] head128 drop0.2",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 24,
+      "stages": [
+        {
+          "depth": 1,
+          "channels": 24,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 4,
+          "activation": "relu"
+        },
+        {
+          "depth": 3,
+          "channels": 64,
+          "kernel": 5,
+          "block": "mbconv",
+          "expand": 2,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 1,
+          "channels": 128,
+          "kernel": 5,
+          "block": "mbconv",
+          "expand": 6,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 1,
+          "channels": 128,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 6,
+          "activation": "leaky_relu"
+        }
+      ],
+      "head_channels": 128,
+      "dropout": 0.2
+    }
+  },
+  {
+    "id": 7,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 5.05 > 3.0 ms",
+    "resolution": 28,
+    "params": 260458,
+    "macs": 21449216,
+    "size_mb": 1.065,
+    "latency_ms": 5.0542,
+    "peak_mem_mb": 1.756,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res28 stem16 [conv k5 c24 d1 relu6 | mbconvx4 k3 c32 d3 relu | mbconvx4 k3 c64 d3 leaky_relu | mbconvx4 k7 c160 d1 relu6] head384 drop0.2",
+    "config": {
+      "resolution": 28,
+      "stem_channels": 16,
+      "stages": [
+        {
+          "depth": 1,
+          "channels": 24,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 2,
+          "activation": "relu6"
+        },
+        {
+          "depth": 3,
+          "channels": 32,
+          "kernel": 3,
+          "block": "mbconv",
+          "expand": 4,
+          "activation": "relu"
+        },
+        {
+          "depth": 3,
+          "channels": 64,
+          "kernel": 3,
+          "block": "mbconv",
+          "expand": 4,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 1,
+          "channels": 160,
+          "kernel": 7,
+          "block": "mbconv",
+          "expand": 4,
+          "activation": "relu6"
+        }
+      ],
+      "head_channels": 384,
+      "dropout": 0.2
+    }
+  },
+  {
+    "id": 8,
+    "generation": 0,
+    "origin": "random",
+    "status": "accepted",
+    "reject_reasons": "",
+    "resolution": 32,
+    "params": 242922,
+    "macs": 23921920,
+    "size_mb": 0.9476,
+    "latency_ms": 2.941,
+    "peak_mem_mb": 1.549,
+    "val_acc": 42.86,
+    "fitness": 40.8869,
+    "train_time_s": 83.1,
+    "config_summary": "res32 stem24 [dwsep k7 c32 d2 leaky_relu | conv k3 c32 d2 hswish | conv k7 c128 d1 relu6] head128 drop0.0",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 24,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 32,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 4,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 2,
+          "channels": 32,
+          "kernel": 3,
+          "block": "conv",
+          "expand": 2,
+          "activation": "hswish"
+        },
+        {
+          "depth": 1,
+          "channels": 128,
+          "kernel": 7,
+          "block": "conv",
+          "expand": 6,
+          "activation": "relu6"
+        }
+      ],
+      "head_channels": 128,
+      "dropout": 0.0
+    }
+  },
+  {
+    "id": 9,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 3.17 > 3.0 ms",
+    "resolution": 24,
+    "params": 67594,
+    "macs": 6463424,
+    "size_mb": 0.3068,
+    "latency_ms": 3.1707,
+    "peak_mem_mb": 0.599,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res24 stem16 [mbconvx2 k3 c24 d1 hswish | mbconvx2 k3 c48 d3 leaky_relu | dwsep k3 c96 d3 relu6] head128 drop0.0",
+    "config": {
+      "resolution": 24,
+      "stem_channels": 16,
+      "stages": [
+        {
+          "depth": 1,
+          "channels": 24,
+          "kernel": 3,
+          "block": "mbconv",
+          "expand": 2,
+          "activation": "hswish"
+        },
+        {
+          "depth": 3,
+          "channels": 48,
+          "kernel": 3,
+          "block": "mbconv",
+          "expand": 2,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 3,
+          "channels": 96,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 4,
+          "activation": "relu6"
+        }
+      ],
+      "head_channels": 128,
+      "dropout": 0.0
+    }
+  },
+  {
+    "id": 10,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 4.25 > 3.0 ms; size 1.50 > 1.5 MB",
+    "resolution": 28,
+    "params": 387738,
+    "macs": 50568208,
+    "size_mb": 1.5024,
+    "latency_ms": 4.2507,
+    "peak_mem_mb": 1.791,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res28 stem24 [conv k7 c24 d2 relu | dwsep k7 c48 d1 relu6 | dwsep k7 c64 d1 silu | conv k5 c160 d1 silu] head384 drop0.0",
+    "config": {
+      "resolution": 28,
+      "stem_channels": 24,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 24,
+          "kernel": 7,
+          "block": "conv",
+          "expand": 6,
+          "activation": "relu"
+        },
+        {
+          "depth": 1,
+          "channels": 48,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "relu6"
+        },
+        {
+          "depth": 1,
+          "channels": 64,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "silu"
+        },
+        {
+          "depth": 1,
+          "channels": 160,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 2,
+          "activation": "silu"
+        }
+      ],
+      "head_channels": 384,
+      "dropout": 0.0
+    }
+  },
+  {
+    "id": 11,
+    "generation": 0,
+    "origin": "random",
+    "status": "accepted",
+    "reject_reasons": "",
+    "resolution": 32,
+    "params": 89706,
+    "macs": 18044672,
+    "size_mb": 0.3607,
+    "latency_ms": 2.1308,
+    "peak_mem_mb": 0.715,
+    "val_acc": 41.38,
+    "fitness": 40.3755,
+    "train_time_s": 2.8,
+    "config_summary": "res32 stem32 [conv k3 c16 d1 silu | conv k5 c32 d2 silu | dwsep k5 c96 d1 silu] head384 drop0.2",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 32,
+      "stages": [
+        {
+          "depth": 1,
+          "channels": 16,
+          "kernel": 3,
+          "block": "conv",
+          "expand": 4,
+          "activation": "silu"
+        },
+        {
+          "depth": 2,
+          "channels": 32,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 2,
+          "activation": "silu"
+        },
+        {
+          "depth": 1,
+          "channels": 96,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 4,
+          "activation": "silu"
+        }
+      ],
+      "head_channels": 384,
+      "dropout": 0.2
+    }
+  },
+  {
+    "id": 12,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 4.78 > 3.0 ms; size 5.17 > 1.5 MB; peak memory 5.9 > 2.5 MB",
+    "resolution": 24,
+    "params": 1344602,
+    "macs": 53614336,
+    "size_mb": 5.1687,
+    "latency_ms": 4.7844,
+    "peak_mem_mb": 5.879,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res24 stem16 [mbconvx6 k3 c16 d2 leaky_relu | conv k5 c64 d1 leaky_relu | conv k7 c128 d2 leaky_relu | mbconvx2 k3 c128 d1 relu6] head256 drop0.0",
+    "config": {
+      "resolution": 24,
+      "stem_channels": 16,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 16,
+          "kernel": 3,
+          "block": "mbconv",
+          "expand": 6,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 1,
+          "channels": 64,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 2,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 2,
+          "channels": 128,
+          "kernel": 7,
+          "block": "conv",
+          "expand": 2,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 1,
+          "channels": 128,
+          "kernel": 3,
+          "block": "mbconv",
+          "expand": 2,
+          "activation": "relu6"
+        }
+      ],
+      "head_channels": 256,
+      "dropout": 0.0
+    }
+  },
+  {
+    "id": 13,
+    "generation": 0,
+    "origin": "random",
+    "status": "accepted",
+    "reject_reasons": "",
+    "resolution": 32,
+    "params": 198762,
+    "macs": 17279488,
+    "size_mb": 0.7858,
+    "latency_ms": 2.8332,
+    "peak_mem_mb": 1.382,
+    "val_acc": 43.64,
+    "fitness": 41.7399,
+    "train_time_s": 3.2,
+    "config_summary": "res32 stem32 [dwsep k3 c32 d1 leaky_relu | dwsep k5 c64 d3 hswish | conv k5 c96 d1 hswish] head256 drop0.1",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 32,
+      "stages": [
+        {
+          "depth": 1,
+          "channels": 32,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 3,
+          "channels": 64,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "hswish"
+        },
+        {
+          "depth": 1,
+          "channels": 96,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 6,
+          "activation": "hswish"
+        }
+      ],
+      "head_channels": 256,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 14,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 3.25 > 3.0 ms",
+    "resolution": 24,
+    "params": 91346,
+    "macs": 17897280,
+    "size_mb": 0.3859,
+    "latency_ms": 3.2528,
+    "peak_mem_mb": 2.375,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res24 stem24 [conv k3 c32 d3 relu6 | dwsep k3 c48 d3 relu6 | dwsep k3 c96 d2 hswish] head384 drop0.2",
+    "config": {
+      "resolution": 24,
+      "stem_channels": 24,
+      "stages": [
+        {
+          "depth": 3,
+          "channels": 32,
+          "kernel": 3,
+          "block": "conv",
+          "expand": 6,
+          "activation": "relu6"
+        },
+        {
+          "depth": 3,
+          "channels": 48,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "relu6"
+        },
+        {
+          "depth": 2,
+          "channels": 96,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "hswish"
+        }
+      ],
+      "head_channels": 384,
+      "dropout": 0.2
+    }
+  },
+  {
+    "id": 15,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 4.28 > 3.0 ms",
+    "resolution": 32,
+    "params": 171626,
+    "macs": 48414464,
+    "size_mb": 0.6832,
+    "latency_ms": 4.2752,
+    "peak_mem_mb": 1.155,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res32 stem32 [conv k3 c32 d2 relu | conv k7 c64 d1 hswish | dwsep k7 c64 d3 hswish] head384 drop0.1",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 32,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 32,
+          "kernel": 3,
+          "block": "conv",
+          "expand": 4,
+          "activation": "relu"
+        },
+        {
+          "depth": 1,
+          "channels": 64,
+          "kernel": 7,
+          "block": "conv",
+          "expand": 4,
+          "activation": "hswish"
+        },
+        {
+          "depth": 3,
+          "channels": 64,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "hswish"
+        }
+      ],
+      "head_channels": 384,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 16,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 3.07 > 3.0 ms; size 1.65 > 1.5 MB",
+    "resolution": 24,
+    "params": 416490,
+    "macs": 37271040,
+    "size_mb": 1.6452,
+    "latency_ms": 3.0671,
+    "peak_mem_mb": 1.855,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res24 stem16 [conv k5 c24 d3 hswish | conv k5 c64 d1 silu | mbconvx2 k5 c128 d3 relu | mbconvx2 k3 c192 d1 hswish] head384 drop0.2",
+    "config": {
+      "resolution": 24,
+      "stem_channels": 16,
+      "stages": [
+        {
+          "depth": 3,
+          "channels": 24,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 2,
+          "activation": "hswish"
+        },
+        {
+          "depth": 1,
+          "channels": 64,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 6,
+          "activation": "silu"
+        },
+        {
+          "depth": 3,
+          "channels": 128,
+          "kernel": 5,
+          "block": "mbconv",
+          "expand": 2,
+          "activation": "relu"
+        },
+        {
+          "depth": 1,
+          "channels": 192,
+          "kernel": 3,
+          "block": "mbconv",
+          "expand": 2,
+          "activation": "hswish"
+        }
+      ],
+      "head_channels": 384,
+      "dropout": 0.2
+    }
+  },
+  {
+    "id": 17,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 5.07 > 3.0 ms; size 4.48 > 1.5 MB; peak memory 4.7 > 2.5 MB",
+    "resolution": 28,
+    "params": 1170250,
+    "macs": 84886528,
+    "size_mb": 4.4837,
+    "latency_ms": 5.0652,
+    "peak_mem_mb": 4.75,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res28 stem16 [conv k5 c24 d1 relu6 | conv k7 c32 d3 leaky_relu | conv k7 c128 d2 relu6] head128 drop0.1",
+    "config": {
+      "resolution": 28,
+      "stem_channels": 16,
+      "stages": [
+        {
+          "depth": 1,
+          "channels": 24,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 4,
+          "activation": "relu6"
+        },
+        {
+          "depth": 3,
+          "channels": 32,
+          "kernel": 7,
+          "block": "conv",
+          "expand": 4,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 2,
+          "channels": 128,
+          "kernel": 7,
+          "block": "conv",
+          "expand": 2,
+          "activation": "relu6"
+        }
+      ],
+      "head_channels": 128,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 18,
+    "generation": 0,
+    "origin": "random",
+    "status": "accepted",
+    "reject_reasons": "",
+    "resolution": 24,
+    "params": 30466,
+    "macs": 7803776,
+    "size_mb": 0.1441,
+    "latency_ms": 2.6765,
+    "peak_mem_mb": 0.681,
+    "val_acc": 39.42,
+    "fitness": 37.8541,
+    "train_time_s": 79.7,
+    "config_summary": "res24 stem32 [mbconvx2 k7 c24 d2 hswish | dwsep k3 c64 d1 silu | dwsep k5 c64 d1 relu6] head128 drop0.0",
+    "config": {
+      "resolution": 24,
+      "stem_channels": 32,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 24,
+          "kernel": 7,
+          "block": "mbconv",
+          "expand": 2,
+          "activation": "hswish"
+        },
+        {
+          "depth": 1,
+          "channels": 64,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "silu"
+        },
+        {
+          "depth": 1,
+          "channels": 64,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 4,
+          "activation": "relu6"
+        }
+      ],
+      "head_channels": 128,
+      "dropout": 0.0
+    }
+  },
+  {
+    "id": 19,
+    "generation": 0,
+    "origin": "random",
+    "status": "accepted",
+    "reject_reasons": "",
+    "resolution": 28,
+    "params": 56106,
+    "macs": 5482432,
+    "size_mb": 0.2482,
+    "latency_ms": 1.6541,
+    "peak_mem_mb": 0.551,
+    "val_acc": 43.06,
+    "fitness": 42.7662,
+    "train_time_s": 57.5,
+    "config_summary": "res28 stem24 [dwsep k5 c16 d2 leaky_relu | dwsep k7 c64 d2 relu | dwsep k7 c64 d2 relu] head384 drop0.1",
+    "config": {
+      "resolution": 28,
+      "stem_channels": 24,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 16,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 2,
+          "channels": 64,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "relu"
+        },
+        {
+          "depth": 2,
+          "channels": 64,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "relu"
+        }
+      ],
+      "head_channels": 384,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 20,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 5.65 > 3.0 ms; size 4.12 > 1.5 MB; peak memory 5.3 > 2.5 MB",
+    "resolution": 32,
+    "params": 1053890,
+    "macs": 143030784,
+    "size_mb": 4.1181,
+    "latency_ms": 5.6544,
+    "peak_mem_mb": 5.32,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res32 stem24 [conv k7 c32 d2 leaky_relu | mbconvx4 k3 c48 d1 relu | mbconvx6 k7 c128 d3 relu6 | mbconvx4 k3 c160 d2 leaky_relu] head256 drop0.2",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 24,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 32,
+          "kernel": 7,
+          "block": "conv",
+          "expand": 4,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 1,
+          "channels": 48,
+          "kernel": 3,
+          "block": "mbconv",
+          "expand": 4,
+          "activation": "relu"
+        },
+        {
+          "depth": 3,
+          "channels": 128,
+          "kernel": 7,
+          "block": "mbconv",
+          "expand": 6,
+          "activation": "relu6"
+        },
+        {
+          "depth": 2,
+          "channels": 160,
+          "kernel": 3,
+          "block": "mbconv",
+          "expand": 4,
+          "activation": "leaky_relu"
+        }
+      ],
+      "head_channels": 256,
+      "dropout": 0.2
+    }
+  },
+  {
+    "id": 21,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 4.25 > 3.0 ms; size 1.75 > 1.5 MB",
+    "resolution": 32,
+    "params": 443818,
+    "macs": 88655616,
+    "size_mb": 1.7455,
+    "latency_ms": 4.2476,
+    "peak_mem_mb": 2.201,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res32 stem24 [dwsep k7 c24 d3 silu | conv k7 c48 d3 silu | mbconvx2 k7 c96 d3 leaky_relu] head384 drop0.1",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 24,
+      "stages": [
+        {
+          "depth": 3,
+          "channels": 24,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 4,
+          "activation": "silu"
+        },
+        {
+          "depth": 3,
+          "channels": 48,
+          "kernel": 7,
+          "block": "conv",
+          "expand": 2,
+          "activation": "silu"
+        },
+        {
+          "depth": 3,
+          "channels": 96,
+          "kernel": 7,
+          "block": "mbconv",
+          "expand": 2,
+          "activation": "leaky_relu"
+        }
+      ],
+      "head_channels": 384,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 22,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 9.42 > 3.0 ms; size 7.20 > 1.5 MB; peak memory 7.7 > 2.5 MB",
+    "resolution": 32,
+    "params": 1867514,
+    "macs": 90425600,
+    "size_mb": 7.1993,
+    "latency_ms": 9.4204,
+    "peak_mem_mb": 7.652,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res32 stem16 [dwsep k3 c24 d2 leaky_relu | dwsep k5 c48 d3 relu6 | conv k7 c96 d3 relu | mbconvx6 k7 c192 d2 hswish] head128 drop0.0",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 16,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 24,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 3,
+          "channels": 48,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 4,
+          "activation": "relu6"
+        },
+        {
+          "depth": 3,
+          "channels": 96,
+          "kernel": 7,
+          "block": "conv",
+          "expand": 6,
+          "activation": "relu"
+        },
+        {
+          "depth": 2,
+          "channels": 192,
+          "kernel": 7,
+          "block": "mbconv",
+          "expand": 6,
+          "activation": "hswish"
+        }
+      ],
+      "head_channels": 128,
+      "dropout": 0.0
+    }
+  },
+  {
+    "id": 23,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 4.59 > 3.0 ms; size 4.96 > 1.5 MB; peak memory 5.8 > 2.5 MB",
+    "resolution": 24,
+    "params": 1290442,
+    "macs": 16204736,
+    "size_mb": 4.9576,
+    "latency_ms": 4.5929,
+    "peak_mem_mb": 5.773,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res24 stem16 [conv k3 c16 d1 leaky_relu | mbconvx6 k5 c48 d1 relu6 | dwsep k5 c128 d3 relu6 | conv k7 c192 d1 silu] head128 drop0.0",
+    "config": {
+      "resolution": 24,
+      "stem_channels": 16,
+      "stages": [
+        {
+          "depth": 1,
+          "channels": 16,
+          "kernel": 3,
+          "block": "conv",
+          "expand": 4,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 1,
+          "channels": 48,
+          "kernel": 5,
+          "block": "mbconv",
+          "expand": 6,
+          "activation": "relu6"
+        },
+        {
+          "depth": 3,
+          "channels": 128,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 4,
+          "activation": "relu6"
+        },
+        {
+          "depth": 1,
+          "channels": 192,
+          "kernel": 7,
+          "block": "conv",
+          "expand": 2,
+          "activation": "silu"
+        }
+      ],
+      "head_channels": 128,
+      "dropout": 0.0
+    }
+  },
+  {
+    "id": 24,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 6.23 > 3.0 ms; size 4.08 > 1.5 MB; peak memory 4.3 > 2.5 MB",
+    "resolution": 24,
+    "params": 1054074,
+    "macs": 37238656,
+    "size_mb": 4.0806,
+    "latency_ms": 6.2346,
+    "peak_mem_mb": 4.281,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res24 stem32 [conv k5 c16 d1 leaky_relu | dwsep k5 c64 d3 leaky_relu | conv k5 c128 d2 silu | mbconvx4 k3 c160 d2 leaky_relu] head256 drop0.2",
+    "config": {
+      "resolution": 24,
+      "stem_channels": 32,
+      "stages": [
+        {
+          "depth": 1,
+          "channels": 16,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 4,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 3,
+          "channels": 64,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 2,
+          "channels": 128,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 6,
+          "activation": "silu"
+        },
+        {
+          "depth": 2,
+          "channels": 160,
+          "kernel": 3,
+          "block": "mbconv",
+          "expand": 4,
+          "activation": "leaky_relu"
+        }
+      ],
+      "head_channels": 256,
+      "dropout": 0.2
+    }
+  },
+  {
+    "id": 25,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 3.66 > 3.0 ms",
+    "resolution": 28,
+    "params": 206978,
+    "macs": 33796096,
+    "size_mb": 0.8219,
+    "latency_ms": 3.664,
+    "peak_mem_mb": 1.563,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res28 stem24 [conv k5 c32 d1 hswish | conv k3 c64 d2 relu6 | mbconvx2 k3 c128 d2 relu] head256 drop0.1",
+    "config": {
+      "resolution": 28,
+      "stem_channels": 24,
+      "stages": [
+        {
+          "depth": 1,
+          "channels": 32,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 4,
+          "activation": "hswish"
+        },
+        {
+          "depth": 2,
+          "channels": 64,
+          "kernel": 3,
+          "block": "conv",
+          "expand": 2,
+          "activation": "relu6"
+        },
+        {
+          "depth": 2,
+          "channels": 128,
+          "kernel": 3,
+          "block": "mbconv",
+          "expand": 2,
+          "activation": "relu"
+        }
+      ],
+      "head_channels": 256,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 26,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 6.25 > 3.0 ms; size 4.58 > 1.5 MB; peak memory 5.0 > 2.5 MB",
+    "resolution": 32,
+    "params": 1187818,
+    "macs": 22886912,
+    "size_mb": 4.577,
+    "latency_ms": 6.2473,
+    "peak_mem_mb": 4.971,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res32 stem24 [dwsep k3 c16 d2 leaky_relu | dwsep k7 c32 d3 relu | dwsep k5 c96 d2 leaky_relu | conv k5 c128 d3 silu] head256 drop0.0",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 24,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 16,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 4,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 3,
+          "channels": 32,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 4,
+          "activation": "relu"
+        },
+        {
+          "depth": 2,
+          "channels": 96,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 3,
+          "channels": 128,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 4,
+          "activation": "silu"
+        }
+      ],
+      "head_channels": 256,
+      "dropout": 0.0
+    }
+  },
+  {
+    "id": 27,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 7.53 > 3.0 ms",
+    "resolution": 28,
+    "params": 260738,
+    "macs": 84859232,
+    "size_mb": 1.0614,
+    "latency_ms": 7.5288,
+    "peak_mem_mb": 1.542,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res28 stem32 [conv k7 c24 d3 relu6 | dwsep k3 c64 d3 leaky_relu | mbconvx4 k3 c64 d3 relu6 | dwsep k3 c128 d2 hswish] head128 drop0.1",
+    "config": {
+      "resolution": 28,
+      "stem_channels": 32,
+      "stages": [
+        {
+          "depth": 3,
+          "channels": 24,
+          "kernel": 7,
+          "block": "conv",
+          "expand": 4,
+          "activation": "relu6"
+        },
+        {
+          "depth": 3,
+          "channels": 64,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 3,
+          "channels": 64,
+          "kernel": 3,
+          "block": "mbconv",
+          "expand": 4,
+          "activation": "relu6"
+        },
+        {
+          "depth": 2,
+          "channels": 128,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 4,
+          "activation": "hswish"
+        }
+      ],
+      "head_channels": 128,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 28,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 4.80 > 3.0 ms; size 2.24 > 1.5 MB; peak memory 2.9 > 2.5 MB",
+    "resolution": 28,
+    "params": 575530,
+    "macs": 37369568,
+    "size_mb": 2.2364,
+    "latency_ms": 4.7953,
+    "peak_mem_mb": 2.86,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res28 stem24 [conv k5 c24 d2 relu | dwsep k3 c64 d3 relu | conv k3 c64 d3 relu | conv k3 c128 d3 relu] head384 drop0.0",
+    "config": {
+      "resolution": 28,
+      "stem_channels": 24,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 24,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 4,
+          "activation": "relu"
+        },
+        {
+          "depth": 3,
+          "channels": 64,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "relu"
+        },
+        {
+          "depth": 3,
+          "channels": 64,
+          "kernel": 3,
+          "block": "conv",
+          "expand": 2,
+          "activation": "relu"
+        },
+        {
+          "depth": 3,
+          "channels": 128,
+          "kernel": 3,
+          "block": "conv",
+          "expand": 4,
+          "activation": "relu"
+        }
+      ],
+      "head_channels": 384,
+      "dropout": 0.0
+    }
+  },
+  {
+    "id": 29,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 5.41 > 3.0 ms; peak memory 2.9 > 2.5 MB",
+    "resolution": 32,
+    "params": 246978,
+    "macs": 29985536,
+    "size_mb": 0.999,
+    "latency_ms": 5.4087,
+    "peak_mem_mb": 2.862,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res32 stem24 [mbconvx6 k7 c16 d2 relu | mbconvx2 k3 c48 d1 hswish | dwsep k5 c128 d3 relu6 | mbconvx2 k7 c192 d1 relu] head384 drop0.1",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 24,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 16,
+          "kernel": 7,
+          "block": "mbconv",
+          "expand": 6,
+          "activation": "relu"
+        },
+        {
+          "depth": 1,
+          "channels": 48,
+          "kernel": 3,
+          "block": "mbconv",
+          "expand": 2,
+          "activation": "hswish"
+        },
+        {
+          "depth": 3,
+          "channels": 128,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "relu6"
+        },
+        {
+          "depth": 1,
+          "channels": 192,
+          "kernel": 7,
+          "block": "mbconv",
+          "expand": 2,
+          "activation": "relu"
+        }
+      ],
+      "head_channels": 384,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 30,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 7.05 > 3.0 ms; peak memory 3.1 > 2.5 MB",
+    "resolution": 32,
+    "params": 350042,
+    "macs": 90180096,
+    "size_mb": 1.3738,
+    "latency_ms": 7.0501,
+    "peak_mem_mb": 3.092,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res32 stem16 [mbconvx4 k5 c32 d2 relu | conv k5 c64 d3 silu | mbconvx4 k5 c96 d1 relu6] head256 drop0.0",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 16,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 32,
+          "kernel": 5,
+          "block": "mbconv",
+          "expand": 4,
+          "activation": "relu"
+        },
+        {
+          "depth": 3,
+          "channels": 64,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 4,
+          "activation": "silu"
+        },
+        {
+          "depth": 1,
+          "channels": 96,
+          "kernel": 5,
+          "block": "mbconv",
+          "expand": 4,
+          "activation": "relu6"
+        }
+      ],
+      "head_channels": 256,
+      "dropout": 0.0
+    }
+  },
+  {
+    "id": 31,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 6.41 > 3.0 ms; size 3.01 > 1.5 MB; peak memory 5.5 > 2.5 MB",
+    "resolution": 32,
+    "params": 773314,
+    "macs": 49504768,
+    "size_mb": 3.0077,
+    "latency_ms": 6.4095,
+    "peak_mem_mb": 5.467,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res32 stem32 [mbconvx6 k5 c24 d2 hswish | dwsep k3 c32 d2 relu6 | mbconvx4 k7 c128 d2 hswish | conv k5 c160 d1 relu6] head256 drop0.1",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 32,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 24,
+          "kernel": 5,
+          "block": "mbconv",
+          "expand": 6,
+          "activation": "hswish"
+        },
+        {
+          "depth": 2,
+          "channels": 32,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 4,
+          "activation": "relu6"
+        },
+        {
+          "depth": 2,
+          "channels": 128,
+          "kernel": 7,
+          "block": "mbconv",
+          "expand": 4,
+          "activation": "hswish"
+        },
+        {
+          "depth": 1,
+          "channels": 160,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 4,
+          "activation": "relu6"
+        }
+      ],
+      "head_channels": 256,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 32,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 4.86 > 3.0 ms",
+    "resolution": 28,
+    "params": 223618,
+    "macs": 78812192,
+    "size_mb": 0.8916,
+    "latency_ms": 4.8609,
+    "peak_mem_mb": 1.269,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res28 stem32 [conv k7 c24 d3 relu6 | dwsep k7 c32 d1 leaky_relu | mbconvx6 k5 c128 d1 silu | dwsep k3 c128 d2 silu] head384 drop0.0",
+    "config": {
+      "resolution": 28,
+      "stem_channels": 32,
+      "stages": [
+        {
+          "depth": 3,
+          "channels": 24,
+          "kernel": 7,
+          "block": "conv",
+          "expand": 6,
+          "activation": "relu6"
+        },
+        {
+          "depth": 1,
+          "channels": 32,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 4,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 1,
+          "channels": 128,
+          "kernel": 5,
+          "block": "mbconv",
+          "expand": 6,
+          "activation": "silu"
+        },
+        {
+          "depth": 2,
+          "channels": 128,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "silu"
+        }
+      ],
+      "head_channels": 384,
+      "dropout": 0.0
+    }
+  },
+  {
+    "id": 33,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 8.59 > 3.0 ms; size 3.27 > 1.5 MB; peak memory 5.0 > 2.5 MB",
+    "resolution": 32,
+    "params": 838578,
+    "macs": 61403392,
+    "size_mb": 3.2724,
+    "latency_ms": 8.592,
+    "peak_mem_mb": 4.975,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res32 stem32 [mbconvx4 k7 c24 d2 silu | dwsep k5 c64 d3 silu | conv k5 c96 d2 relu6 | mbconvx6 k7 c128 d2 relu6] head128 drop0.0",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 32,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 24,
+          "kernel": 7,
+          "block": "mbconv",
+          "expand": 4,
+          "activation": "silu"
+        },
+        {
+          "depth": 3,
+          "channels": 64,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "silu"
+        },
+        {
+          "depth": 2,
+          "channels": 96,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 2,
+          "activation": "relu6"
+        },
+        {
+          "depth": 2,
+          "channels": 128,
+          "kernel": 7,
+          "block": "mbconv",
+          "expand": 6,
+          "activation": "relu6"
+        }
+      ],
+      "head_channels": 128,
+      "dropout": 0.0
+    }
+  },
+  {
+    "id": 34,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 11.18 > 3.0 ms; size 13.92 > 1.5 MB; peak memory 14.4 > 2.5 MB",
+    "resolution": 28,
+    "params": 3636522,
+    "macs": 75268384,
+    "size_mb": 13.9209,
+    "latency_ms": 11.1776,
+    "peak_mem_mb": 14.359,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res28 stem32 [dwsep k7 c32 d3 relu6 | conv k5 c32 d2 relu | dwsep k3 c128 d3 relu | conv k7 c160 d3 silu] head128 drop0.0",
+    "config": {
+      "resolution": 28,
+      "stem_channels": 32,
+      "stages": [
+        {
+          "depth": 3,
+          "channels": 32,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "relu6"
+        },
+        {
+          "depth": 2,
+          "channels": 32,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 4,
+          "activation": "relu"
+        },
+        {
+          "depth": 3,
+          "channels": 128,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "relu"
+        },
+        {
+          "depth": 3,
+          "channels": 160,
+          "kernel": 7,
+          "block": "conv",
+          "expand": 6,
+          "activation": "silu"
+        }
+      ],
+      "head_channels": 128,
+      "dropout": 0.0
+    }
+  },
+  {
+    "id": 35,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 4.05 > 3.0 ms; size 2.68 > 1.5 MB; peak memory 4.7 > 2.5 MB",
+    "resolution": 28,
+    "params": 694378,
+    "macs": 30670560,
+    "size_mb": 2.6787,
+    "latency_ms": 4.0452,
+    "peak_mem_mb": 4.728,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res28 stem24 [conv k3 c24 d2 silu | dwsep k5 c32 d1 leaky_relu | conv k3 c128 d3 leaky_relu | conv k3 c128 d2 silu] head384 drop0.2",
+    "config": {
+      "resolution": 28,
+      "stem_channels": 24,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 24,
+          "kernel": 3,
+          "block": "conv",
+          "expand": 4,
+          "activation": "silu"
+        },
+        {
+          "depth": 1,
+          "channels": 32,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 3,
+          "channels": 128,
+          "kernel": 3,
+          "block": "conv",
+          "expand": 2,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 2,
+          "channels": 128,
+          "kernel": 3,
+          "block": "conv",
+          "expand": 6,
+          "activation": "silu"
+        }
+      ],
+      "head_channels": 384,
+      "dropout": 0.2
+    }
+  },
+  {
+    "id": 36,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 6.91 > 3.0 ms",
+    "resolution": 32,
+    "params": 165874,
+    "macs": 49792256,
+    "size_mb": 0.6903,
+    "latency_ms": 6.9098,
+    "peak_mem_mb": 1.995,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res32 stem24 [mbconvx4 k5 c24 d2 hswish | mbconvx6 k3 c64 d3 relu | dwsep k3 c128 d1 relu] head128 drop0.0",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 24,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 24,
+          "kernel": 5,
+          "block": "mbconv",
+          "expand": 4,
+          "activation": "hswish"
+        },
+        {
+          "depth": 3,
+          "channels": 64,
+          "kernel": 3,
+          "block": "mbconv",
+          "expand": 6,
+          "activation": "relu"
+        },
+        {
+          "depth": 1,
+          "channels": 128,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "relu"
+        }
+      ],
+      "head_channels": 128,
+      "dropout": 0.0
+    }
+  },
+  {
+    "id": 37,
+    "generation": 0,
+    "origin": "random",
+    "status": "rejected",
+    "reject_reasons": "latency 3.39 > 3.0 ms",
+    "resolution": 32,
+    "params": 164874,
+    "macs": 17319680,
+    "size_mb": 0.6713,
+    "latency_ms": 3.3862,
+    "peak_mem_mb": 1.559,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res32 stem16 [dwsep k5 c16 d1 leaky_relu | conv k3 c48 d2 hswish | mbconvx2 k3 c96 d3 hswish] head384 drop0.2",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 16,
+      "stages": [
+        {
+          "depth": 1,
+          "channels": 16,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 2,
+          "channels": 48,
+          "kernel": 3,
+          "block": "conv",
+          "expand": 4,
+          "activation": "hswish"
+        },
+        {
+          "depth": 3,
+          "channels": 96,
+          "kernel": 3,
+          "block": "mbconv",
+          "expand": 2,
+          "activation": "hswish"
+        }
+      ],
+      "head_channels": 384,
+      "dropout": 0.2
+    }
+  },
+  {
+    "id": 38,
+    "generation": 0,
+    "origin": "random",
+    "status": "accepted",
+    "reject_reasons": "",
+    "resolution": 28,
+    "params": 94506,
+    "macs": 32439488,
+    "size_mb": 0.3881,
+    "latency_ms": 2.4927,
+    "peak_mem_mb": 0.624,
+    "val_acc": 40.16,
+    "fitness": 38.7573,
+    "train_time_s": 5.5,
+    "config_summary": "res28 stem16 [conv k7 c16 d3 relu6 | dwsep k3 c32 d1 leaky_relu | dwsep k3 c96 d2 hswish] head384 drop0.1",
+    "config": {
+      "resolution": 28,
+      "stem_channels": 16,
+      "stages": [
+        {
+          "depth": 3,
+          "channels": 16,
+          "kernel": 7,
+          "block": "conv",
+          "expand": 4,
+          "activation": "relu6"
+        },
+        {
+          "depth": 1,
+          "channels": 32,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 2,
+          "channels": 96,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "hswish"
+        }
+      ],
+      "head_channels": 384,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 39,
+    "generation": 1,
+    "origin": "offspring",
+    "status": "rejected",
+    "reject_reasons": "latency 3.33 > 3.0 ms",
+    "resolution": 28,
+    "params": 138666,
+    "macs": 6751104,
+    "size_mb": 0.5674,
+    "latency_ms": 3.3326,
+    "peak_mem_mb": 0.868,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res28 stem24 [dwsep k7 c16 d2 leaky_relu | dwsep k7 c64 d2 relu | dwsep k7 c64 d1 relu | mbconvx2 k7 c192 d1 hswish] head384 drop0.1",
+    "config": {
+      "resolution": 28,
+      "stem_channels": 24,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 16,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 2,
+          "channels": 64,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "relu"
+        },
+        {
+          "depth": 1,
+          "channels": 64,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "relu"
+        },
+        {
+          "depth": 1,
+          "channels": 192,
+          "kernel": 7,
+          "block": "mbconv",
+          "expand": 2,
+          "activation": "hswish"
+        }
+      ],
+      "head_channels": 384,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 40,
+    "generation": 1,
+    "origin": "offspring",
+    "status": "rejected",
+    "reject_reasons": "latency 3.66 > 3.0 ms",
+    "resolution": 28,
+    "params": 48618,
+    "macs": 5128064,
+    "size_mb": 0.2148,
+    "latency_ms": 3.6648,
+    "peak_mem_mb": 0.521,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res28 stem24 [dwsep k5 c16 d2 leaky_relu | dwsep k7 c64 d2 relu | dwsep k7 c64 d1 relu] head384 drop0.2",
+    "config": {
+      "resolution": 28,
+      "stem_channels": 24,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 16,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 2,
+          "channels": 64,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "relu"
+        },
+        {
+          "depth": 1,
+          "channels": 64,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "relu"
+        }
+      ],
+      "head_channels": 384,
+      "dropout": 0.2
+    }
+  },
+  {
+    "id": 41,
+    "generation": 1,
+    "origin": "offspring",
+    "status": "accepted",
+    "reject_reasons": "",
+    "resolution": 32,
+    "params": 126570,
+    "macs": 27481856,
+    "size_mb": 0.5013,
+    "latency_ms": 2.6585,
+    "peak_mem_mb": 0.855,
+    "val_acc": 42.02,
+    "fitness": 40.3699,
+    "train_time_s": 4.8,
+    "config_summary": "res32 stem32 [conv k3 c16 d1 silu | conv k7 c32 d2 silu | dwsep k5 c96 d1 silu] head384 drop0.2",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 32,
+      "stages": [
+        {
+          "depth": 1,
+          "channels": 16,
+          "kernel": 3,
+          "block": "conv",
+          "expand": 4,
+          "activation": "silu"
+        },
+        {
+          "depth": 2,
+          "channels": 32,
+          "kernel": 7,
+          "block": "conv",
+          "expand": 2,
+          "activation": "silu"
+        },
+        {
+          "depth": 1,
+          "channels": 96,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 4,
+          "activation": "silu"
+        }
+      ],
+      "head_channels": 384,
+      "dropout": 0.2
+    }
+  },
+  {
+    "id": 42,
+    "generation": 1,
+    "origin": "offspring",
+    "status": "accepted",
+    "reject_reasons": "",
+    "resolution": 32,
+    "params": 89706,
+    "macs": 18044672,
+    "size_mb": 0.3607,
+    "latency_ms": 2.9896,
+    "peak_mem_mb": 0.715,
+    "val_acc": 40.82,
+    "fitness": 38.8961,
+    "train_time_s": 3.1,
+    "config_summary": "res32 stem32 [conv k3 c16 d1 silu | conv k5 c32 d2 hswish | dwsep k5 c96 d1 silu] head384 drop0.0",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 32,
+      "stages": [
+        {
+          "depth": 1,
+          "channels": 16,
+          "kernel": 3,
+          "block": "conv",
+          "expand": 4,
+          "activation": "silu"
+        },
+        {
+          "depth": 2,
+          "channels": 32,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 2,
+          "activation": "hswish"
+        },
+        {
+          "depth": 1,
+          "channels": 96,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 4,
+          "activation": "silu"
+        }
+      ],
+      "head_channels": 384,
+      "dropout": 0.0
+    }
+  },
+  {
+    "id": 43,
+    "generation": 1,
+    "origin": "offspring",
+    "status": "rejected",
+    "reject_reasons": "latency 7.70 > 3.0 ms; size 6.06 > 1.5 MB; peak memory 8.5 > 2.5 MB",
+    "resolution": 32,
+    "params": 1580618,
+    "macs": 52103680,
+    "size_mb": 6.0621,
+    "latency_ms": 7.7039,
+    "peak_mem_mb": 8.536,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res32 stem32 [mbconvx6 k3 c32 d1 leaky_relu | mbconvx4 k5 c48 d1 hswish | conv k5 c96 d1 hswish | conv k5 c192 d2 hswish] head256 drop0.1",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 32,
+      "stages": [
+        {
+          "depth": 1,
+          "channels": 32,
+          "kernel": 3,
+          "block": "mbconv",
+          "expand": 6,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 1,
+          "channels": 48,
+          "kernel": 5,
+          "block": "mbconv",
+          "expand": 4,
+          "activation": "hswish"
+        },
+        {
+          "depth": 1,
+          "channels": 96,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 6,
+          "activation": "hswish"
+        },
+        {
+          "depth": 2,
+          "channels": 192,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 2,
+          "activation": "hswish"
+        }
+      ],
+      "head_channels": 256,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 44,
+    "generation": 1,
+    "origin": "offspring",
+    "status": "rejected",
+    "reject_reasons": "latency 3.70 > 3.0 ms",
+    "resolution": 32,
+    "params": 242922,
+    "macs": 23921920,
+    "size_mb": 0.9476,
+    "latency_ms": 3.6988,
+    "peak_mem_mb": 1.549,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res32 stem24 [dwsep k7 c32 d2 leaky_relu | conv k3 c32 d2 relu6 | conv k7 c128 d1 relu6] head128 drop0.0",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 24,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 32,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 4,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 2,
+          "channels": 32,
+          "kernel": 3,
+          "block": "conv",
+          "expand": 4,
+          "activation": "relu6"
+        },
+        {
+          "depth": 1,
+          "channels": 128,
+          "kernel": 7,
+          "block": "conv",
+          "expand": 6,
+          "activation": "relu6"
+        }
+      ],
+      "head_channels": 128,
+      "dropout": 0.0
+    }
+  },
+  {
+    "id": 45,
+    "generation": 1,
+    "origin": "offspring",
+    "status": "rejected",
+    "reject_reasons": "latency 3.51 > 3.0 ms",
+    "resolution": 32,
+    "params": 68362,
+    "macs": 7741184,
+    "size_mb": 0.293,
+    "latency_ms": 3.5102,
+    "peak_mem_mb": 0.698,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res32 stem24 [dwsep k5 c16 d2 leaky_relu | dwsep k7 c32 d2 relu | mbconvx4 k5 c96 d1 hswish] head384 drop0.1",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 24,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 16,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 2,
+          "channels": 32,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "relu"
+        },
+        {
+          "depth": 1,
+          "channels": 96,
+          "kernel": 5,
+          "block": "mbconv",
+          "expand": 4,
+          "activation": "hswish"
+        }
+      ],
+      "head_channels": 384,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 46,
+    "generation": 1,
+    "origin": "offspring",
+    "status": "rejected",
+    "reject_reasons": "latency 4.16 > 3.0 ms",
+    "resolution": 32,
+    "params": 67634,
+    "macs": 9910016,
+    "size_mb": 0.2965,
+    "latency_ms": 4.1644,
+    "peak_mem_mb": 0.822,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res32 stem32 [dwsep k3 c24 d3 leaky_relu | dwsep k5 c64 d3 hswish | dwsep k5 c96 d1 silu] head384 drop0.1",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 32,
+      "stages": [
+        {
+          "depth": 3,
+          "channels": 24,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 3,
+          "channels": 64,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "hswish"
+        },
+        {
+          "depth": 1,
+          "channels": 96,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 4,
+          "activation": "silu"
+        }
+      ],
+      "head_channels": 384,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 47,
+    "generation": 1,
+    "origin": "offspring",
+    "status": "rejected",
+    "reject_reasons": "latency 8.21 > 3.0 ms; size 10.62 > 1.5 MB; peak memory 11.6 > 2.5 MB",
+    "resolution": 32,
+    "params": 2775994,
+    "macs": 49555968,
+    "size_mb": 10.619,
+    "latency_ms": 8.2084,
+    "peak_mem_mb": 11.591,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res32 stem32 [mbconvx2 k3 c16 d1 leaky_relu | dwsep k5 c64 d1 hswish | dwsep k3 c96 d1 hswish | conv k7 c192 d2 relu] head256 drop0.2",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 32,
+      "stages": [
+        {
+          "depth": 1,
+          "channels": 16,
+          "kernel": 3,
+          "block": "mbconv",
+          "expand": 2,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 1,
+          "channels": 64,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "hswish"
+        },
+        {
+          "depth": 1,
+          "channels": 96,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "hswish"
+        },
+        {
+          "depth": 2,
+          "channels": 192,
+          "kernel": 7,
+          "block": "conv",
+          "expand": 2,
+          "activation": "relu"
+        }
+      ],
+      "head_channels": 256,
+      "dropout": 0.2
+    }
+  },
+  {
+    "id": 48,
+    "generation": 1,
+    "origin": "offspring",
+    "status": "rejected",
+    "reject_reasons": "latency 3.93 > 3.0 ms",
+    "resolution": 28,
+    "params": 96266,
+    "macs": 10805792,
+    "size_mb": 0.4117,
+    "latency_ms": 3.9302,
+    "peak_mem_mb": 0.806,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res28 stem24 [dwsep k5 c16 d3 leaky_relu | mbconvx2 k7 c64 d2 relu | dwsep k7 c96 d2 relu] head384 drop0.1",
+    "config": {
+      "resolution": 28,
+      "stem_channels": 24,
+      "stages": [
+        {
+          "depth": 3,
+          "channels": 16,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 2,
+          "channels": 64,
+          "kernel": 7,
+          "block": "mbconv",
+          "expand": 2,
+          "activation": "relu"
+        },
+        {
+          "depth": 2,
+          "channels": 96,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "relu"
+        }
+      ],
+      "head_channels": 384,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 49,
+    "generation": 1,
+    "origin": "offspring",
+    "status": "rejected",
+    "reject_reasons": "latency 3.03 > 3.0 ms",
+    "resolution": 32,
+    "params": 47674,
+    "macs": 6522624,
+    "size_mb": 0.2198,
+    "latency_ms": 3.0305,
+    "peak_mem_mb": 0.62,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res32 stem24 [dwsep k5 c16 d2 hswish | mbconvx2 k3 c32 d2 hswish | dwsep k5 c64 d2 relu] head384 drop0.1",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 24,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 16,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "hswish"
+        },
+        {
+          "depth": 2,
+          "channels": 32,
+          "kernel": 3,
+          "block": "mbconv",
+          "expand": 2,
+          "activation": "hswish"
+        },
+        {
+          "depth": 2,
+          "channels": 64,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "relu"
+        }
+      ],
+      "head_channels": 384,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 50,
+    "generation": 1,
+    "origin": "offspring",
+    "status": "rejected",
+    "reject_reasons": "latency 3.30 > 3.0 ms",
+    "resolution": 28,
+    "params": 113770,
+    "macs": 4566240,
+    "size_mb": 0.4754,
+    "latency_ms": 3.2967,
+    "peak_mem_mb": 0.774,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res28 stem24 [dwsep k5 c16 d2 leaky_relu | dwsep k7 c64 d1 relu | dwsep k7 c96 d2 relu | dwsep k3 c128 d2 hswish] head384 drop0.1",
+    "config": {
+      "resolution": 28,
+      "stem_channels": 24,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 16,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 1,
+          "channels": 64,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "relu"
+        },
+        {
+          "depth": 2,
+          "channels": 96,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "relu"
+        },
+        {
+          "depth": 2,
+          "channels": 128,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "hswish"
+        }
+      ],
+      "head_channels": 384,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 51,
+    "generation": 1,
+    "origin": "offspring",
+    "status": "rejected",
+    "reject_reasons": "latency 7.95 > 3.0 ms; size 9.71 > 1.5 MB; peak memory 10.1 > 2.5 MB",
+    "resolution": 32,
+    "params": 2537386,
+    "macs": 77657856,
+    "size_mb": 9.714,
+    "latency_ms": 7.9547,
+    "peak_mem_mb": 10.058,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res32 stem32 [conv k3 c16 d1 relu | conv k5 c64 d2 silu | dwsep k5 c96 d2 silu | conv k5 c192 d3 relu] head384 drop0.2",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 32,
+      "stages": [
+        {
+          "depth": 1,
+          "channels": 16,
+          "kernel": 3,
+          "block": "conv",
+          "expand": 4,
+          "activation": "relu"
+        },
+        {
+          "depth": 2,
+          "channels": 64,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 2,
+          "activation": "silu"
+        },
+        {
+          "depth": 2,
+          "channels": 96,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 4,
+          "activation": "silu"
+        },
+        {
+          "depth": 3,
+          "channels": 192,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 4,
+          "activation": "relu"
+        }
+      ],
+      "head_channels": 384,
+      "dropout": 0.2
+    }
+  },
+  {
+    "id": 52,
+    "generation": 1,
+    "origin": "offspring",
+    "status": "accepted",
+    "reject_reasons": "",
+    "resolution": 32,
+    "params": 113898,
+    "macs": 13355520,
+    "size_mb": 0.4608,
+    "latency_ms": 2.6019,
+    "peak_mem_mb": 1.058,
+    "val_acc": 40.36,
+    "fitness": 38.8336,
+    "train_time_s": 7.9,
+    "config_summary": "res32 stem32 [dwsep k7 c32 d2 leaky_relu | dwsep k3 c32 d2 hswish | conv k5 c96 d1 hswish] head256 drop0.1",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 32,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 32,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 4,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 2,
+          "channels": 32,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "hswish"
+        },
+        {
+          "depth": 1,
+          "channels": 96,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 6,
+          "activation": "hswish"
+        }
+      ],
+      "head_channels": 256,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 53,
+    "generation": 1,
+    "origin": "offspring",
+    "status": "rejected",
+    "reject_reasons": "latency 3.74 > 3.0 ms",
+    "resolution": 28,
+    "params": 58506,
+    "macs": 6329152,
+    "size_mb": 0.2626,
+    "latency_ms": 3.7431,
+    "peak_mem_mb": 0.706,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res28 stem24 [dwsep k3 c32 d2 leaky_relu | dwsep k7 c64 d2 relu | dwsep k3 c64 d3 relu] head384 drop0.1",
+    "config": {
+      "resolution": 28,
+      "stem_channels": 24,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 32,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 2,
+          "channels": 64,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "relu"
+        },
+        {
+          "depth": 3,
+          "channels": 64,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "relu"
+        }
+      ],
+      "head_channels": 384,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 54,
+    "generation": 1,
+    "origin": "offspring",
+    "status": "rejected",
+    "reject_reasons": "latency 4.21 > 3.0 ms; size 1.65 > 1.5 MB",
+    "resolution": 28,
+    "params": 424058,
+    "macs": 24151616,
+    "size_mb": 1.6491,
+    "latency_ms": 4.2053,
+    "peak_mem_mb": 1.952,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res28 stem24 [dwsep k5 c16 d3 leaky_relu | dwsep k7 c64 d2 relu | conv k7 c64 d2 relu] head128 drop0.1",
+    "config": {
+      "resolution": 28,
+      "stem_channels": 24,
+      "stages": [
+        {
+          "depth": 3,
+          "channels": 16,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 2,
+          "channels": 64,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "relu"
+        },
+        {
+          "depth": 2,
+          "channels": 64,
+          "kernel": 7,
+          "block": "conv",
+          "expand": 2,
+          "activation": "relu"
+        }
+      ],
+      "head_channels": 128,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 55,
+    "generation": 1,
+    "origin": "offspring",
+    "status": "accepted",
+    "reject_reasons": "",
+    "resolution": 24,
+    "params": 54266,
+    "macs": 4062336,
+    "size_mb": 0.2409,
+    "latency_ms": 2.6556,
+    "peak_mem_mb": 0.492,
+    "val_acc": 43.26,
+    "fitness": 41.5644,
+    "train_time_s": 4.4,
+    "config_summary": "res24 stem24 [dwsep k5 c24 d2 leaky_relu | dwsep k3 c64 d2 relu | dwsep k7 c64 d2 relu] head384 drop0.1",
+    "config": {
+      "resolution": 24,
+      "stem_channels": 24,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 24,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 4,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 2,
+          "channels": 64,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "relu"
+        },
+        {
+          "depth": 2,
+          "channels": 64,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "relu"
+        }
+      ],
+      "head_channels": 384,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 56,
+    "generation": 2,
+    "origin": "offspring",
+    "status": "accepted",
+    "reject_reasons": "",
+    "resolution": 32,
+    "params": 73770,
+    "macs": 9284096,
+    "size_mb": 0.3087,
+    "latency_ms": 2.3438,
+    "peak_mem_mb": 0.905,
+    "val_acc": 42.66,
+    "fitness": 41.3478,
+    "train_time_s": 3.6,
+    "config_summary": "res32 stem32 [dwsep k3 c32 d1 relu6 | dwsep k5 c64 d3 hswish | conv k3 c64 d1 hswish] head256 drop0.1",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 32,
+      "stages": [
+        {
+          "depth": 1,
+          "channels": 32,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 4,
+          "activation": "relu6"
+        },
+        {
+          "depth": 3,
+          "channels": 64,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "hswish"
+        },
+        {
+          "depth": 1,
+          "channels": 64,
+          "kernel": 3,
+          "block": "conv",
+          "expand": 6,
+          "activation": "hswish"
+        }
+      ],
+      "head_channels": 256,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 57,
+    "generation": 2,
+    "origin": "offspring",
+    "status": "rejected",
+    "reject_reasons": "latency 3.55 > 3.0 ms",
+    "resolution": 24,
+    "params": 118922,
+    "macs": 23491840,
+    "size_mb": 0.4935,
+    "latency_ms": 3.5453,
+    "peak_mem_mb": 0.883,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res24 stem32 [conv k5 c32 d1 leaky_relu | mbconvx2 k5 c48 d3 hswish | mbconvx4 k5 c96 d1 leaky_relu] head256 drop0.1",
+    "config": {
+      "resolution": 24,
+      "stem_channels": 32,
+      "stages": [
+        {
+          "depth": 1,
+          "channels": 32,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 4,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 3,
+          "channels": 48,
+          "kernel": 5,
+          "block": "mbconv",
+          "expand": 2,
+          "activation": "hswish"
+        },
+        {
+          "depth": 1,
+          "channels": 96,
+          "kernel": 5,
+          "block": "mbconv",
+          "expand": 4,
+          "activation": "leaky_relu"
+        }
+      ],
+      "head_channels": 256,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 58,
+    "generation": 2,
+    "origin": "offspring",
+    "status": "rejected",
+    "reject_reasons": "latency 4.48 > 3.0 ms",
+    "resolution": 28,
+    "params": 113378,
+    "macs": 15463424,
+    "size_mb": 0.4745,
+    "latency_ms": 4.4762,
+    "peak_mem_mb": 1.9,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res28 stem24 [mbconvx6 k5 c16 d2 leaky_relu | dwsep k7 c64 d2 silu | dwsep k7 c64 d1 relu | dwsep k7 c160 d1 hswish] head384 drop0.1",
+    "config": {
+      "resolution": 28,
+      "stem_channels": 24,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 16,
+          "kernel": 5,
+          "block": "mbconv",
+          "expand": 6,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 2,
+          "channels": 64,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "silu"
+        },
+        {
+          "depth": 1,
+          "channels": 64,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "relu"
+        },
+        {
+          "depth": 1,
+          "channels": 160,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "hswish"
+        }
+      ],
+      "head_channels": 384,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 59,
+    "generation": 2,
+    "origin": "offspring",
+    "status": "rejected",
+    "reject_reasons": "latency 6.32 > 3.0 ms; size 2.15 > 1.5 MB; peak memory 2.7 > 2.5 MB",
+    "resolution": 32,
+    "params": 549514,
+    "macs": 35251712,
+    "size_mb": 2.1466,
+    "latency_ms": 6.32,
+    "peak_mem_mb": 2.728,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res32 stem24 [dwsep k5 c32 d2 leaky_relu | dwsep k5 c64 d3 hswish | conv k7 c128 d1 relu6 | dwsep k5 c160 d3 silu] head256 drop0.1",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 24,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 32,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 3,
+          "channels": 64,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "hswish"
+        },
+        {
+          "depth": 1,
+          "channels": 128,
+          "kernel": 7,
+          "block": "conv",
+          "expand": 2,
+          "activation": "relu6"
+        },
+        {
+          "depth": 3,
+          "channels": 160,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "silu"
+        }
+      ],
+      "head_channels": 256,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 60,
+    "generation": 2,
+    "origin": "offspring",
+    "status": "accepted",
+    "reject_reasons": "",
+    "resolution": 24,
+    "params": 51754,
+    "macs": 4417024,
+    "size_mb": 0.232,
+    "latency_ms": 2.7332,
+    "peak_mem_mb": 0.553,
+    "val_acc": 42.26,
+    "fitness": 40.5218,
+    "train_time_s": 5.9,
+    "config_summary": "res24 stem32 [dwsep k3 c32 d1 leaky_relu | dwsep k5 c64 d3 hswish | dwsep k7 c64 d2 relu] head256 drop0.0",
+    "config": {
+      "resolution": 24,
+      "stem_channels": 32,
+      "stages": [
+        {
+          "depth": 1,
+          "channels": 32,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 3,
+          "channels": 64,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "hswish"
+        },
+        {
+          "depth": 2,
+          "channels": 64,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "relu"
+        }
+      ],
+      "head_channels": 256,
+      "dropout": 0.0
+    }
+  },
+  {
+    "id": 61,
+    "generation": 2,
+    "origin": "offspring",
+    "status": "accepted",
+    "reject_reasons": "",
+    "resolution": 32,
+    "params": 71970,
+    "macs": 6670848,
+    "size_mb": 0.3084,
+    "latency_ms": 2.9811,
+    "peak_mem_mb": 0.774,
+    "val_acc": 42.66,
+    "fitness": 40.6575,
+    "train_time_s": 4.0,
+    "config_summary": "res32 stem24 [dwsep k3 c24 d1 leaky_relu | dwsep k5 c32 d3 hswish | dwsep k7 c128 d2 relu] head256 drop0.1",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 24,
+      "stages": [
+        {
+          "depth": 1,
+          "channels": 24,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 3,
+          "channels": 32,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "hswish"
+        },
+        {
+          "depth": 2,
+          "channels": 128,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "relu"
+        }
+      ],
+      "head_channels": 256,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 62,
+    "generation": 2,
+    "origin": "offspring",
+    "status": "rejected",
+    "reject_reasons": "latency 3.34 > 3.0 ms",
+    "resolution": 28,
+    "params": 51242,
+    "macs": 5233408,
+    "size_mb": 0.2338,
+    "latency_ms": 3.3446,
+    "peak_mem_mb": 0.58,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res28 stem32 [dwsep k5 c16 d2 leaky_relu | dwsep k3 c64 d2 leaky_relu | dwsep k7 c64 d3 relu] head256 drop0.0",
+    "config": {
+      "resolution": 28,
+      "stem_channels": 32,
+      "stages": [
+        {
+          "depth": 2,
+          "channels": 16,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 2,
+          "channels": 64,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 3,
+          "channels": 64,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "relu"
+        }
+      ],
+      "head_channels": 256,
+      "dropout": 0.0
+    }
+  },
+  {
+    "id": 63,
+    "generation": 2,
+    "origin": "offspring",
+    "status": "accepted",
+    "reject_reasons": "",
+    "resolution": 32,
+    "params": 40010,
+    "macs": 4470272,
+    "size_mb": 0.1816,
+    "latency_ms": 2.2368,
+    "peak_mem_mb": 0.651,
+    "val_acc": 45.8,
+    "fitness": 44.5368,
+    "train_time_s": 3.5,
+    "config_summary": "res32 stem16 [dwsep k3 c32 d1 leaky_relu | dwsep k5 c48 d2 hswish | dwsep k7 c64 d2 relu] head256 drop0.1",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 16,
+      "stages": [
+        {
+          "depth": 1,
+          "channels": 32,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 2,
+          "channels": 48,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "hswish"
+        },
+        {
+          "depth": 2,
+          "channels": 64,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "relu"
+        }
+      ],
+      "head_channels": 256,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 64,
+    "generation": 3,
+    "origin": "offspring",
+    "status": "accepted",
+    "reject_reasons": "",
+    "resolution": 32,
+    "params": 55018,
+    "macs": 8276480,
+    "size_mb": 0.244,
+    "latency_ms": 2.7198,
+    "peak_mem_mb": 0.772,
+    "val_acc": 43.14,
+    "fitness": 41.3798,
+    "train_time_s": 6.0,
+    "config_summary": "res32 stem24 [dwsep k3 c32 d1 leaky_relu | dwsep k7 c64 d3 relu | dwsep k7 c64 d2 relu] head256 drop0.1",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 24,
+      "stages": [
+        {
+          "depth": 1,
+          "channels": 32,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 3,
+          "channels": 64,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "relu"
+        },
+        {
+          "depth": 2,
+          "channels": 64,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "relu"
+        }
+      ],
+      "head_channels": 256,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 65,
+    "generation": 3,
+    "origin": "offspring",
+    "status": "rejected",
+    "reject_reasons": "latency 3.22 > 3.0 ms",
+    "resolution": 32,
+    "params": 241610,
+    "macs": 35752448,
+    "size_mb": 0.9395,
+    "latency_ms": 3.2183,
+    "peak_mem_mb": 1.544,
+    "val_acc": null,
+    "fitness": null,
+    "train_time_s": null,
+    "config_summary": "res32 stem32 [dwsep k3 c32 d1 leaky_relu | conv k5 c48 d2 hswish | conv k5 c96 d1 hswish] head256 drop0.1",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 32,
+      "stages": [
+        {
+          "depth": 1,
+          "channels": 32,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 2,
+          "channels": 48,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 2,
+          "activation": "hswish"
+        },
+        {
+          "depth": 1,
+          "channels": 96,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 6,
+          "activation": "hswish"
+        }
+      ],
+      "head_channels": 256,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 66,
+    "generation": 3,
+    "origin": "offspring",
+    "status": "accepted",
+    "reject_reasons": "",
+    "resolution": 28,
+    "params": 139306,
+    "macs": 10320000,
+    "size_mb": 0.5587,
+    "latency_ms": 2.5953,
+    "peak_mem_mb": 1.011,
+    "val_acc": 42.98,
+    "fitness": 41.3619,
+    "train_time_s": 3.9,
+    "config_summary": "res28 stem32 [dwsep k3 c32 d1 leaky_relu | dwsep k5 c64 d3 hswish | conv k5 c64 d1 hswish] head256 drop0.1",
+    "config": {
+      "resolution": 28,
+      "stem_channels": 32,
+      "stages": [
+        {
+          "depth": 1,
+          "channels": 32,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 6,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 3,
+          "channels": 64,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "hswish"
+        },
+        {
+          "depth": 1,
+          "channels": 64,
+          "kernel": 5,
+          "block": "conv",
+          "expand": 6,
+          "activation": "hswish"
+        }
+      ],
+      "head_channels": 256,
+      "dropout": 0.1
+    }
+  },
+  {
+    "id": 67,
+    "generation": 3,
+    "origin": "offspring",
+    "status": "accepted",
+    "reject_reasons": "",
+    "resolution": 24,
+    "params": 75626,
+    "macs": 7496448,
+    "size_mb": 0.3326,
+    "latency_ms": 1.9935,
+    "peak_mem_mb": 0.614,
+    "val_acc": 43.42,
+    "fitness": 42.5641,
+    "train_time_s": 6.3,
+    "config_summary": "res24 stem32 [dwsep k5 c16 d3 leaky_relu | mbconvx2 k7 c64 d2 relu | dwsep k7 c64 d2 hswish] head384 drop0.2",
+    "config": {
+      "resolution": 24,
+      "stem_channels": 32,
+      "stages": [
+        {
+          "depth": 3,
+          "channels": 16,
+          "kernel": 5,
+          "block": "dwsep",
+          "expand": 4,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 2,
+          "channels": 64,
+          "kernel": 7,
+          "block": "mbconv",
+          "expand": 2,
+          "activation": "relu"
+        },
+        {
+          "depth": 2,
+          "channels": 64,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "hswish"
+        }
+      ],
+      "head_channels": 384,
+      "dropout": 0.2
+    }
+  },
+  {
+    "id": 68,
+    "generation": 3,
+    "origin": "offspring",
+    "status": "accepted",
+    "reject_reasons": "",
+    "resolution": 32,
+    "params": 49418,
+    "macs": 5424640,
+    "size_mb": 0.2223,
+    "latency_ms": 2.9837,
+    "peak_mem_mb": 0.688,
+    "val_acc": 45.64,
+    "fitness": 43.495,
+    "train_time_s": 3.6,
+    "config_summary": "res32 stem16 [dwsep k3 c32 d1 leaky_relu | dwsep k7 c48 d2 hswish | dwsep k7 c64 d3 hswish] head256 drop0.1",
+    "config": {
+      "resolution": 32,
+      "stem_channels": 16,
+      "stages": [
+        {
+          "depth": 1,
+          "channels": 32,
+          "kernel": 3,
+          "block": "dwsep",
+          "expand": 4,
+          "activation": "leaky_relu"
+        },
+        {
+          "depth": 2,
+          "channels": 48,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 2,
+          "activation": "hswish"
+        },
+        {
+          "depth": 3,
+          "channels": 64,
+          "kernel": 7,
+          "block": "dwsep",
+          "expand": 4,
+          "activation": "hswish"
+        }
+      ],
+      "head_channels": 256,
+      "dropout": 0.1
+    }
+  }
+]

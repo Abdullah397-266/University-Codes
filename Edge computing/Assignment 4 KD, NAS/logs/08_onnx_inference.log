@@ -1,0 +1,21 @@
+PS edge assignment 4> python src/onnx_inference.py --model all --test-index 7
+
+==============================================================================
+ ONNX Runtime 1.31.0 | CPUExecutionProvider | 1 thread(s)
+==============================================================================
+Files already downloaded and verified
+mobilenetv2_baseline           7.94 ms | top-3: beetle 26.0%, porcupine 15.2%, shrew 10.0% | true: butterfly [wrong]
+Files already downloaded and verified
+mobilenetv2_kd                 4.57 ms | top-3: skunk 24.9%, shrew 18.3%, beetle 17.2% | true: butterfly [wrong]
+Files already downloaded and verified
+squeezenet_baseline            3.19 ms | top-3: raccoon 44.9%, shrew 17.1%, mouse 4.7% | true: butterfly [wrong]
+Files already downloaded and verified
+squeezenet_kd                  3.24 ms | top-3: shrew 28.7%, skunk 14.3%, porcupine 10.2% | true: butterfly [wrong]
+Files already downloaded and verified
+efficientnet_lite0_baseline    5.01 ms | top-3: beetle 70.3%, shrew 3.2%, butterfly 2.6% | true: butterfly [wrong]
+Files already downloaded and verified
+efficientnet_lite0_kd          5.01 ms | top-3: beetle 40.7%, skunk 17.2%, shrew 16.7% | true: butterfly [wrong]
+Files already downloaded and verified
+nas_best                       0.74 ms | top-3: frog 36.6%, bird 34.4%, deer 18.9% | true: frog [correct]
+
+[step finished in 0.2 min, exit code 0]

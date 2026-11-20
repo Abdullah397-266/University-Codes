@@ -1,0 +1,16 @@
+PS edge assignment 4> python src/export_onnx.py
+
+==============================================================================
+ ONNX export (opset 17) + verification with ONNX Runtime 1.31.0
+==============================================================================
+mobilenetv2_baseline         -> mobilenetv2_baseline.onnx           8.95 MB | input 1x3x32x32 | max |torch-ort| = 3.34e-06 | top-1 match: True
+mobilenetv2_kd               -> mobilenetv2_kd.onnx                 8.95 MB | input 1x3x32x32 | max |torch-ort| = 3.81e-06 | top-1 match: True
+squeezenet_baseline          -> squeezenet_baseline.onnx            2.97 MB | input 1x3x32x32 | max |torch-ort| = 3.10e-06 | top-1 match: True
+squeezenet_kd                -> squeezenet_kd.onnx                  2.97 MB | input 1x3x32x32 | max |torch-ort| = 3.81e-06 | top-1 match: True
+efficientnet_lite0_baseline  -> efficientnet_lite0_baseline.onnx   13.31 MB | input 1x3x32x32 | max |torch-ort| = 4.77e-06 | top-1 match: True
+efficientnet_lite0_kd        -> efficientnet_lite0_kd.onnx         13.31 MB | input 1x3x32x32 | max |torch-ort| = 3.81e-06 | top-1 match: True
+nas_best                     -> nas_best.onnx                       0.16 MB | input 1x3x32x32 | max |torch-ort| = 2.62e-06 | top-1 match: True
+
+7 models exported -> models/onnx/, summary in results/onnx_export.csv
+
+[step finished in 0.2 min, exit code 0]

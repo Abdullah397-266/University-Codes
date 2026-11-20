@@ -1,0 +1,17 @@
+PS edge assignment 4> python src/inference.py --model all --test-index 7
+
+==============================================================================
+ PyTorch CPU inference | models: teacher, mobilenetv2_baseline, mobilenetv2_kd, squeezenet_baseline, squeezenet_kd, efficientnet_lite0_baseline, efficientnet_lite0_kd, nas_best
+==============================================================================
+Files already downloaded and verified
+teacher                      (cifar100, 32px)  49.86 ms | top-3: butterfly 77.7%, beetle 9.4%, skunk 4.8% | true: butterfly  [correct]
+mobilenetv2_baseline         (cifar100, 32px)  24.23 ms | top-3: beetle 26.0%, porcupine 15.2%, shrew 10.0% | true: butterfly  [wrong]
+mobilenetv2_kd               (cifar100, 32px)  11.97 ms | top-3: skunk 24.9%, shrew 18.3%, beetle 17.2% | true: butterfly  [wrong]
+squeezenet_baseline          (cifar100, 32px)  17.00 ms | top-3: raccoon 44.9%, shrew 17.1%, mouse 4.7% | true: butterfly  [wrong]
+squeezenet_kd                (cifar100, 32px)   8.31 ms | top-3: shrew 28.7%, skunk 14.3%, porcupine 10.2% | true: butterfly  [wrong]
+efficientnet_lite0_baseline  (cifar100, 32px)  15.78 ms | top-3: beetle 70.3%, shrew 3.2%, butterfly 2.6% | true: butterfly  [wrong]
+efficientnet_lite0_kd        (cifar100, 32px)  12.07 ms | top-3: beetle 40.7%, skunk 17.2%, shrew 16.7% | true: butterfly  [wrong]
+Files already downloaded and verified
+nas_best                     (cifar10, 32px)   5.61 ms | top-3: frog 36.6%, bird 34.4%, deer 18.9% | true: frog  [correct]
+
+[step finished in 0.1 min, exit code 0]
