@@ -189,6 +189,8 @@ def main():
     p.add_argument("--name", default="Abdullah Qadri")
     p.add_argument("--roll", default="23i-0089")
     p.add_argument("--section", default="B")
+    p.add_argument("--repo", default="https://github.com/Abdullah397-266/University-Codes/tree/main/"
+                                      "Edge%20computing/Assignment%204%20KD%2C%20NAS")
     args = p.parse_args()
     FIG.mkdir(parents=True, exist_ok=True)
 
@@ -206,7 +208,9 @@ def main():
           Spacer(1, 4), Paragraph("Knowledge Distillation (CIFAR-100) and Hardware-Aware Neural Architecture Search "
                                   "(CIFAR-10)", CENTER), Spacer(1, 0.8 * cm),
           Paragraph(f"{args.name} &nbsp;|&nbsp; {args.roll} &nbsp;|&nbsp; Section {args.section}", CENTER),
-          Paragraph(date.today().strftime("%d %B %Y"), CENTER), Spacer(1, 0.6 * cm)]
+          Paragraph(date.today().strftime("%d %B %Y"), CENTER), Spacer(1, 0.4 * cm),
+          Paragraph(f"GitHub repository: <link href='{args.repo}' color='#2a78d6'><u>{args.repo}</u></link>",
+                    ParagraphStyle("RL", parent=CENTER, fontSize=8.5, leading=11)), Spacer(1, 0.6 * cm)]
     if synthetic:
         s.append(Paragraph("<font color='#c0392b'><b>Note:</b> the numbers in this version come from a pipeline smoke "
                            "test on synthetic random data (no CIFAR download), so accuracies are at chance level. "
