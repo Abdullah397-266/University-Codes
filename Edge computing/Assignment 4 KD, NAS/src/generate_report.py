@@ -382,9 +382,9 @@ def main():
     shots = sorted(SHOTS.glob("*.png"))
     if shots:
         s += [PageBreak(), Paragraph("6. Screenshots", H1),
-              Paragraph("Console output of every pipeline step (captured by run_all.py from the actual runs).", BODY)]
+              Paragraph("Terminal screenshots of every pipeline step from the actual run (training on the laptop GPU with CUDA, latency on the CPU). Figures are in pipeline order.", BODY)]
         for i, sh in enumerate(shots, 1):
-            s.append(KeepTogether([img(sh, 17 * cm), Paragraph(f"Figure S{i}: {sh.stem}", SMALL), Spacer(1, 6)]))
+            s.append(KeepTogether([img(sh, 17 * cm), Paragraph(f"Figure S{i}: {sh.stem.split('_', 1)[-1].replace('_', ' ')}", SMALL), Spacer(1, 6)]))
 
     # ---------------------------------------------------------------- 7 deliverables
     s += [PageBreak(), Paragraph("7. Deliverables and how to run", H1)]
